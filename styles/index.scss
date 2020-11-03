@@ -1,10 +1,178 @@
-.button {
+$base-font-size: 1em;
+$seaweed-font: 'Seaweed Script', cursive;
+$oswald-font: 'Oswald', sans-serif;
+$hover-link: lightgray;
+
+
+html, body {
+    margin: 0;
+}
+header{
+    background-color: gray;
+    margin: 0;
+    
+    
+    h1{
+        font-size: 3rem;
+        font-family: $seaweed-font;
+        margin: 20px;
+        grid-area: a;
+    }
+    
+}
+
+main {
+    font-size: $base-font-size;
+    h1, h2{
+        font-family: $seaweed-font;
+        font-size: 2.25em;
+    }
+    p {
+        font-family: $oswald-font;
+        padding: 20px;
+        margin: 0;
+    }
+}
+
+section {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
-section {
+button {
+    align-items: center;
+    margin: 0;
+    width: 10em;
+    height: 2em;
+    font-family: $oswald-font;
+    font-size: 1em;
+    background-color: $hover-link;
+}
+footer {
+    background-color: gray;
+    height: 3em;
+    text-align: center;
+    padding: .5em;
+    margin: 2em 0 0 0;
+}
+@media only screen and (min-width:401px) {
+    header{
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        grid-template-areas: 
+    "a b c ";
+    input{
+        align-self: center;
+        height: 2em;
+        width: 20em;
+        grid-area: c;
+        justify-self: end;
+        border: none;
+    }
+    button {
+        width: 2em;
+        height: 2em;
+        padding: 0px 10px;
+        align-self: center;
+        justify-self: end;
+        background: darkgray;
+        font-size: 17px;
+        border: none;
+        cursor: pointer;
+        grid-area: c;
+    }
+    }
+    nav{
+        align-self: center;
+        grid-area: b;
+        width: 20em;
+        font-family: $oswald-font;
+        position: relative;
+        ul {
+            display: flex;
+            flex-flow: row;
+            list-style: none;
+            overflow: hidden;
+
+        }
+    li{
+        a{
+        text-decoration: none;
+        color: black;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 17px;
+        }
+        &:hover {
+            background-color: $hover-link;
+        }
+        &:active {
+            background-color: darkgray;
+        }
+    }
+    }
+    .hamburger { 
+        display: none;
+    }
+    figure {
+    
+        text-align: center;
+        
+        img {
+            height: 20em;
+            background-size: cover;
+        }
+    }
+}
+
+@media screen and (max-width: 400px) {
+header{
     display: grid;
-    grid-template-columns: auto;
-    justify-content: center;
+    grid-template-columns: repeat(2,1fr);
+    input {
+        display: none;
+    }
+    button{
+        display: none;
+    }
+}
+    
+
+
+.hamburger{
+    margin: 0;
+    padding: 15px;
+    cursor: pointer;
+    transition-timing-function: linear;
+    transition-duration: .15s;
+    transition-property: opacity,filter;
+}
+menu {
+    a,
+    li {
+      display: block; /* 2 */
+    }
+
+    a {
+      text-decoration: none; /* 3 */
+      color: currentColor; /* 4 */
+      padding: 1em; /* 5 */
+    }
+
+    li {
+    border-style: solid; /* 6 */
+    border-width: 0 0 1px;
+    }
+}
+figure {
+    
+    text-align: center;
+    
+    img {
+        width: 15em;
+        background-size: cover;
+    }
+}
 }

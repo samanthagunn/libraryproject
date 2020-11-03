@@ -1,3 +1,4 @@
+{
 "books": [
     {
         "id": 1,
@@ -12,7 +13,7 @@
         "author": "Gregory Maguire",
         "pubdate": "1995",
         "pages": 406
-    }
+    },
     {
         "id": 3,
         "title": "Fantastic Beasts and Where to Find Them",
@@ -21,3 +22,4 @@
         "pages": 304
     }
 ]
+}
