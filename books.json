@@ -1,0 +1,23 @@
+"books": [
+    {
+        "id": 1,
+        "title": "Harry Potter and the Sorcerers Stone",
+        "author": "J.K. Rowling",
+        "pubdate": "1997",
+        "pages": 309
+    },
+    {
+        "id": 2,
+        "title": "Wicked",
+        "author": "Gregory Maguire",
+        "pubdate": "1995",
+        "pages": 406
+    }
+    {
+        "id": 3,
+        "title": "Fantastic Beasts and Where to Find Them",
+        "author": "J.K. Rowling",
+        "pubdate": "November 18, 2016",
+        "pages": 304
+    }
+]
