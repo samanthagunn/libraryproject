@@ -4,29 +4,26 @@ html, body {
 header {
   background-color: gray;
   margin: 0; }
-  header h1 {
-    font-size: 3rem;
-    font-family: "Seaweed Script", cursive;
-    margin: 20px;
-    grid-area: a; }
+
+header h1 {
+  font-size: 3rem;
+  font-family: "Seaweed Script", cursive;
+  margin: 20px;
+  grid-area: a; }
 
 main {
   font-size: 1em; }
-  main h1, main h2 {
-    font-family: "Seaweed Script", cursive;
-    font-size: 2.25em; }
-  main p {
-    font-family: "Oswald", sans-serif;
-    padding: 20px;
-    margin: 0; }
 
-section {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center; }
+main h1, main h2 {
+  font-family: "Seaweed Script", cursive;
+  font-size: 2.25em; }
 
-button {
+main p {
+  font-family: "Oswald", sans-serif;
+  padding: 20px;
+  margin: 0; }
+
+main button {
   align-items: center;
   margin: 0;
   width: 10em;
@@ -34,6 +31,12 @@ button {
   font-family: "Oswald", sans-serif;
   font-size: 1em;
   background-color: lightgray; }
+
+main section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; }
 
 footer {
   background-color: gray;
@@ -47,86 +50,116 @@ footer {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-areas: "a b c "; }
-    header input {
-      align-self: center;
-      height: 2em;
-      width: 20em;
-      grid-area: c;
-      justify-self: end;
-      border: none; }
-    header button {
-      width: 2em;
-      height: 2em;
-      padding: 0px 10px;
-      align-self: center;
-      justify-self: end;
-      background: darkgray;
-      font-size: 17px;
-      border: none;
-      cursor: pointer;
-      grid-area: c; }
+  header input {
+    align-self: center;
+    height: 2em;
+    width: 20em;
+    grid-area: c;
+    justify-self: end;
+    border: none; }
+  header .hamburger-container {
+    display: none; }
+  header button {
+    width: 2em;
+    height: 2em;
+    padding: 0px 10px;
+    align-self: center;
+    justify-self: end;
+    background: darkgray;
+    font-size: 17px;
+    border: none;
+    cursor: pointer;
+    grid-area: c; }
   nav {
     align-self: center;
     grid-area: b;
     width: 20em;
     font-family: "Oswald", sans-serif;
     position: relative; }
-    nav ul {
-      display: flex;
-      flex-flow: row;
-      list-style: none;
-      overflow: hidden; }
-    nav li a {
-      text-decoration: none;
-      color: black;
-      text-align: center;
-      padding: 14px 16px;
-      text-decoration: none;
-      font-size: 17px; }
-    nav li:hover {
-      background-color: lightgray; }
-    nav li:active {
-      background-color: darkgray; }
-  .hamburger {
-    display: none; }
+  nav ul {
+    display: flex;
+    flex-flow: row;
+    list-style: none;
+    overflow: hidden; }
+  nav li a {
+    text-decoration: none;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    font-size: 17px; }
+  nav li:hover {
+    background-color: lightgray; }
+  nav li:active {
+    background-color: darkgray; }
   figure {
     text-align: center; }
-    figure img {
-      height: 20em;
-      background-size: cover; } }
+  figure img {
+    height: 20em;
+    background-size: cover; } }
 
 @media screen and (max-width: 400px) {
   header {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); }
-    header input {
-      display: none; }
-    header button {
-      display: none; }
-  .hamburger {
+    height: 60px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center; }
+  header h1 {
+    font-size: 2.25em;
     margin: 0;
-    padding: 15px;
-    cursor: pointer;
-    transition-timing-function: linear;
-    transition-duration: .15s;
-    transition-property: opacity,filter; }
-  menu a,
-  menu li {
-    display: block;
-    /* 2 */ }
-  menu a {
+    padding: 10px; }
+  header input[type="text"] {
+    display: none; }
+  header button {
+    display: none; }
+  header .hamburger-container {
+    margin-right: 5vw;
+    padding: 6px 12px;
+    border: 2px solid #262f43;
+    position: relative; }
+  header .hamburger-container > div {
+    width: 22px;
+    height: 2px;
+    background: #262f43;
+    margin-bottom: 6px; }
+  header .hamburger-container > div:last-of-type {
+    margin-bottom: 0; }
+  header .hamburger-container input[type="checkbox"] {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: 0;
+    box-shadow: 0px 2px 5px 5px rgba(0, 0, 0, 0.3);
+    transition: box-shadow .5s;
+    appearance: none; }
+  header .hamburger-container input[type="checkbox"]:checked {
+    box-shadow: none;
+    transition: box-shadow .5s; }
+  header .hamburger-container input[type="checkbox"]:checked + nav {
+    display: block; }
+  header .hamburger-container input[type="checkbox"] + nav {
+    display: none;
+    position: fixed;
+    top: 60px;
+    width: 100%;
+    left: 0;
+    text-align: center;
+    background: lightgray; }
+  header .hamburger-container input[type="checkbox"] + nav a {
     text-decoration: none;
-    /* 3 */
-    color: currentColor;
-    /* 4 */
-    padding: 1em;
-    /* 5 */ }
-  menu li {
-    border-style: solid;
-    /* 6 */
-    border-width: 0 0 1px; }
-  figure {
-    text-align: center; }
-    figure img {
-      width: 15em;
-      background-size: cover; } }
+    color: black; }
+  header .hamburger-container input[type="checkbox"] + nav ul {
+    font-family: "Oswald", sans-serif;
+    background: lightgray;
+    list-style: none; } }
+
+figure {
+  text-align: center; }
+
+figure img {
+  width: 15em;
+  background-size: cover; }

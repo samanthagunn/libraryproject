@@ -6,25 +6,33 @@
     <link rel="stylesheet" href="styles/index.css">
     <link href="https://fonts.googleapis.com/css2?family=Oswald&family=Seaweed+Script&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link href="dist/hamburgers.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/8b4de92ce8.js" crossorigin="anonymous"></script>
     <title>The Library</title>
 </head>
 <body>
     <header>
         <h1>The Library</h1>
 
-    <nav>
-        <button class="hamburger hamburger--emphatic is-active" type="button">
-            <span class="hamburger-box">
-            <span class="hamburger-inner"></span>
-            </span>
-        </button>
-        <ul class="menu">
-        <li> <a href="index.html">Home</a></li>
-        <li> <a href="bookshelf.html">Bookshelf</a></li>
+    <div class="hamburger-container">
+        <!-- <input id="menu-toggle" type="checkbox">
+        <label id="menu-label" for="menu-toggle">
+            <i class="fas fa-bars" id="menu-icon"></i> -->
+            <div></div>
+            <div></div>
+            <div></div>
+        
+        <input type="checkbox"> 
+       <!-- </label> --> 
+        <nav >
+            
+        <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="bookshelf.html">Bookshelf</a></li>
         <li><a href="edit.html">Add Book</a> </li>
         </ul>
     </nav>
+    </div>
+
     <input type="text" placeholder="Search..">
     <button type="submit"><i class="fa fa-search"></i></button>
 </header>
@@ -44,14 +52,5 @@
     </footer>
     
 </body>
-<script>
-    // Look for .hamburger
-    var hamburger = document.querySelector(".hamburger");
-    // On click
-    hamburger.addEventListener("click", function() {
-      // Toggle class "is-active"
-      hamburger.classList.toggle("is-active");
-      // Do something else, like open/close menu
-    });
-  </script>
+
 </html>
