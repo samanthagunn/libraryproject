@@ -16,7 +16,29 @@ main {
 
 main h1, main h2 {
   font-family: "Seaweed Script", cursive;
-  font-size: 2.25em; }
+  text-align: center; }
+
+main h3 {
+  font-family: "Oswald", sans-serif;
+  text-align: center;
+  margin: 0;
+  word-wrap: normal; }
+
+main article {
+  border: 2px solid darkgrey;
+  border-radius: 5px;
+  margin: 10px;
+  width: 65%; }
+
+main article p {
+  padding: 10px;
+  text-align: center;
+  word-wrap: normal;
+  font-style: italic; }
+
+main article img {
+  padding: 10px;
+  text-align: center; }
 
 main p {
   font-family: "Oswald", sans-serif;
@@ -91,6 +113,8 @@ footer {
     background-color: lightgray; }
   nav li:active {
     background-color: darkgray; }
+  h1, h2 {
+    font-size: 2.25em; }
   figure {
     text-align: center; }
   figure img {
@@ -155,7 +179,9 @@ footer {
   header .hamburger-container input[type="checkbox"] + nav ul {
     font-family: "Oswald", sans-serif;
     background: lightgray;
-    list-style: none; } }
+    list-style: none; }
+  h2 {
+    font-size: 1.5em; } }
 
 figure {
   text-align: center; }
