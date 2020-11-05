@@ -66,9 +66,32 @@ figure img {
   height: 50vh;
   background-size: cover; }
 
+.add-book {
+  width: 90vw;
+  font-family: "Oswald", sans-serif;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); }
+
+.add-book input[type=text] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box; }
+
+.add-book input[type=text] label {
+  float: left; }
+
+.add-book input[type=text] span {
+  display: block;
+  overflow: hidden;
+  padding: 0px 4px 0px 6px; }
+
 footer {
   font-family: "Oswald", sans-serif;
-  position: fixed;
   bottom: 0;
   width: 100%;
   background-color: gray;
@@ -81,14 +104,12 @@ footer {
     grid-template-columns: repeat(3, 1fr);
     grid-template-areas: "a b c "; }
   header input {
-    align-self: center;
     height: 2em;
     width: 20em;
-    grid-area: c;
-    justify-self: end;
-    border: none; }
-  header .hamburger-container {
-    display: none; }
+    justify-self: stretch;
+    align-self: center;
+    border: none;
+    grid-area: c; }
   header button {
     width: 2em;
     height: 2em;
@@ -98,8 +119,9 @@ footer {
     background: darkgray;
     font-size: 17px;
     border: none;
-    cursor: pointer;
-    grid-area: c; }
+    cursor: pointer; }
+  .hamburger-container {
+    display: none; }
   nav {
     align-self: center;
     grid-area: b;
@@ -156,16 +178,15 @@ footer {
     height: 60px;
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center; }
   header h1 {
-    font-size: 2.25em;
+    font-size: 2em;
     margin: 0;
     padding: 10px; }
-  header input[type="text"] {
-    display: none; }
-  header button {
-    display: none; }
+  header .search {
+    padding: 5px; }
   header .hamburger-container {
     margin-right: 5vw;
     padding: 6px 12px;
@@ -194,7 +215,8 @@ footer {
     box-shadow: none;
     transition: box-shadow .5s; }
   header .hamburger-container input[type="checkbox"]:checked + nav {
-    display: block; }
+    display: block;
+    width: 100vw; }
   header .hamburger-container input[type="checkbox"] + nav {
     display: none;
     position: fixed;
@@ -225,6 +247,7 @@ footer {
     text-align: center;
     padding: 10px;
     height: auto;
+    width: 60vw;
     margin: auto; }
   .desktop {
     display: none; }
