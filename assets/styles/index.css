@@ -2,11 +2,13 @@ html, body {
   margin: 0; }
 
 header {
-  background-color: gray;
+  background-color: #464545;
   margin: 0; }
 
 header h1 {
-  font-size: 3rem;
+  color: #fff;
+  text-shadow: lime;
+  font-size: 3vw;
   font-family: "Oswald", sans-serif;
   margin: 0px 20px 10px 20px;
   grid-area: a; }
@@ -36,7 +38,7 @@ main button {
   height: 2em;
   font-family: "Oswald", sans-serif;
   font-size: 1em;
-  background-color: lightgray; }
+  background-color: teal; }
 
 main section {
   margin: 0 20;
@@ -100,47 +102,59 @@ footer {
 
 @media only screen and (min-width: 401px) {
   header {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-areas: "a b c "; }
-  header input {
+    display: flex;
+    flex-direction: row;
+    flex-flow: row;
+    justify-content: space-between; }
+  header .search {
+    align-self: center;
+    padding: 20px; }
+  header .search input {
     height: 2em;
-    width: 20em;
-    justify-self: stretch;
+    width: 20vw;
+    text-align: center;
+    justify-self: center;
     align-self: center;
     border: none;
-    grid-area: c; }
-  header button {
-    width: 2em;
+    border-radius: 1rem; }
+  header .search button {
+    width: 5vw;
     height: 2em;
+    border-radius: 1rem;
     padding: 0px 10px;
     align-self: center;
-    justify-self: right;
+    justify-self: self-start;
     background: darkgray;
     font-size: 17px;
-    border: none;
-    cursor: pointer; }
+    border: 3px solid teal;
+    cursor: pointer;
+    grid-area: d; }
+  header .search button:hover {
+    background-color: teal; }
   .hamburger-container {
     display: none; }
   nav {
+    justify-self: center;
     align-self: center;
     grid-area: b;
-    width: 20em;
     font-family: "Oswald", sans-serif;
     position: relative; }
   nav ul {
+    padding: 0;
     display: flex;
     flex-flow: row;
+    flex: auto;
     list-style: none;
     overflow: hidden; }
   nav li a {
     text-decoration: none;
-    color: black;
+    color: white;
     text-align: center;
     padding: 14px 16px;
     font-size: 17px; }
   nav li:hover {
-    background-color: lightgray; }
+    color: black;
+    background-color: teal; }
   nav li:active {
     background-color: darkgray; }
   h1, h2 {

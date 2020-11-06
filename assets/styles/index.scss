@@ -1,22 +1,25 @@
 $base-font-size: 1em;
 $seaweed-font: 'Seaweed Script', cursive;
 $oswald-font: 'Oswald', sans-serif;
-$hover-link: lightgray;
+$hover-link: teal;
 $no-margin: 0;
 
 html, body {
     margin: $no-margin;
 }
 header{
-    background-color: gray;
+    background-color: #464545 ;
     margin: $no-margin;
     
     h1{
-        font-size: 3rem;
+        color: #fff;
+        text-shadow: lime;
+        font-size: 3vw;
         font-family: $oswald-font;
         margin: 0px 20px 10px 20px;
         grid-area: a;
     }
+    
     
 }
 
@@ -120,47 +123,75 @@ footer {
 }
 @media only screen and (min-width:401px) {
     header{
-        display: grid;
-        grid-template-columns: repeat(3,1fr);
-        grid-template-areas: 
-    "a b c ";
+        display: flex;
+        flex-direction: row;
+        flex-flow: row;
+        justify-content: space-between;
+    //     grid-template-columns: repeat(4,1fr);
+    //     grid-template-areas: 
+    // "a b c d ";
     
         
+// .search {
+//     // display: flex;
+//     // flex-direction: row;
+//     grid-area: c;
+//     width: 20vh;
+//     height: 2em;
+//     justify-self: center;
+//         align-self: center;
 
-        input{
-        height: 2em;
-        width: 20em;
-        justify-self: stretch;
-        align-self: center;
-        border: none;
-        grid-area: c;
         
+// }
+.search {
+    align-self: center;
+    padding: 20px;
+input {
+    height: 2em;
+    width: 20vw;
+    text-align: center;
+    justify-self: center;
+    align-self: center;
+    border: none;
+    border-radius: 1rem;
     
+    
+
 }
-    button {
-        width: 2em;
-        height: 2em;
-        padding: 0px 10px;
-        align-self: center;
-        justify-self: right;
-        background: darkgray;
-        font-size: 17px;
-        border: none;
-        cursor: pointer;
+button {
+    width: 5vw;
+    height: 2em;
+    border-radius: 1rem;
+    padding: 0px 10px;
+    align-self: center;
+    justify-self: self-start;
+    background: darkgray;
+    font-size: 17px;
+    border: 3px solid teal;
+    cursor: pointer;
+    grid-area: d;
+
+    &:hover {
+        background-color: $hover-link;
     }
+}
     }
+}
     .hamburger-container {
         display: none;
     }
     nav{
+        justify-self: center;
         align-self: center;
         grid-area: b;
-        width: 20em;
+        // width: 20em;
         font-family: $oswald-font;
         position: relative;
         ul {
+            padding: 0;
             display: flex;
             flex-flow: row;
+            flex: auto;
             list-style: none;
             overflow: hidden;
 
@@ -168,13 +199,16 @@ footer {
     li{
         a{
         text-decoration: none;
-        color: black;
+        color: white;
         text-align: center;
         padding: 14px 16px;
         font-size: 17px;
         }
         &:hover {
+            color: black;
             background-color: $hover-link;
+            
+            
         }
         &:active {
             background-color: darkgray;
