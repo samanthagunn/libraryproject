@@ -48,15 +48,42 @@
         <h2>Add a New Book</h2>
     <section class="add-book">
         
-        <form>
+        <form >
+            <fieldset>
             <label for="title"> Title </label> <span><input type= "text" id="title" name="title"></span><br>
             <label for="author">Author</label><span> <input type ="text"></span><br>
-            <label for="synopsis">Synopsis</label><span> <input type ="text"></span><br>
-            <label for="pages">Pages</label> <span><input type ="text"></span><br>
-            <input type ="submit">
+            <label for="synopsis">Synopsis</label><span> <textarea type ="comment"></textarea></span><br>
+            <div class="book-drop">
+            <label for="published">Published</label> <span><input type ="date"></span>
+            <label for="pages">Pages</label> 
+            <select name="pages">
+                <option value="under100">Under 100</option>
+                <option value="100-300">100-300</option>
+                <option value="over300">Over 300</option>
+            </select>
+        </div><br>
+            <label for="rating">Star Rating</label>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star"></span>
+            <span class="fa fa-star"></span><br><br>
+            <br>
+            
+            <button type ="submit">Submit</button> <button type="reset">Cancel</button>
+        </fieldset>
         </form>
+        <div class="book-cover">
+
+            <label for="book-cover">Add Image</label><br>
+    
+            <input type="file" id="book-cover" name="book-cover" accept="image/png, image/jpeg">
+            </div>
 
     </section>
+    <section>
+        
+        </section>
     </main>
     <footer>
         <p>Awesome Footer Text</p>

@@ -37,8 +37,10 @@ main button {
   width: 10em;
   height: 2em;
   font-family: "Oswald", sans-serif;
-  font-size: 1em;
-  background-color: teal; }
+  font-size: 1.25em;
+  background-color: teal;
+  border-radius: 1em;
+  color: white; }
 
 main section {
   margin: 0 20;
@@ -59,9 +61,14 @@ figure .hero-text {
   margin: 0 auto;
   left: 0;
   right: 0;
-  top: 33%;
+  top: 23%;
   /* Adjust this value to move the positioned div up and down */
   text-align: center; }
+
+figure .hero-text h1 {
+  margin: 0;
+  text-shadow: 4px 3px 5px #000;
+  color: white; }
 
 figure img {
   width: 100vw;
@@ -69,35 +76,86 @@ figure img {
   background-size: cover; }
 
 .add-book {
-  width: 90vw;
-  font-family: "Oswald", sans-serif;
-  padding: 20px;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr); }
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100vw;
+  padding: 20px; }
 
-.add-book input[type=text] {
+.add-book form {
+  width: 100vw;
+  font-family: "Oswald", sans-serif;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  width: 40vw; }
+
+.add-book form .book-drop {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+  align-items: baseline;
+  justify-content: space-between; }
+
+.add-book form .book-drop input[type="date"], .add-book form .book-drop select {
+  padding: 12px 20px;
+  margin: 8px 0;
+  border: 1px solid #ccc;
+  border-radius: 1em;
+  box-sizing: border-box; }
+
+.add-book form fieldset, .add-book form input[type="text"], .add-book form textarea {
   width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
   display: inline-block;
   border: 1px solid #ccc;
-  border-radius: 4px;
+  border-radius: 1em;
   box-sizing: border-box; }
 
-.add-book input[type=text] label {
-  float: left; }
+.add-book form fieldset button, .add-book form input[type="text"] button, .add-book form textarea button {
+  border-radius: 1em; }
 
-.add-book input[type=text] span {
-  display: block;
-  overflow: hidden;
-  padding: 0px 4px 0px 6px; }
+.add-book form fieldset button[type="reset"], .add-book form input[type="text"] button[type="reset"], .add-book form textarea button[type="reset"] {
+  background-color: lightgray; }
+
+.add-book form fieldset textarea, .add-book form input[type="text"] textarea, .add-book form textarea textarea {
+  width: 100%; }
+
+.add-book form .checked {
+  color: teal; }
+
+.add-book form .fa-star {
+  font-size: 2em; }
+
+.add-book .book-cover {
+  grid-column: 3;
+  display: flex;
+  flex-direction: column;
+  padding: 20px; }
+
+.add-book .book-cover label {
+  border: 2px solid darkgrey;
+  background-color: lightgray;
+  box-sizing: border-box;
+  text-align: center;
+  border-radius: 1em;
+  justify-content: center;
+  align-self: center;
+  width: 20vw;
+  height: 400px; }
+
+.add-book .book-cover input {
+  border: 1px solid #ccc;
+  border-radius: 4px; }
 
 footer {
   font-family: "Oswald", sans-serif;
   bottom: 0;
-  width: 100%;
+  width: 100vw;
   background-color: gray;
-  height: 3em;
+  height: 10vh;
   text-align: center; }
 
 @media only screen and (min-width: 401px) {
@@ -116,11 +174,11 @@ footer {
     justify-self: center;
     align-self: center;
     border: none;
-    border-radius: 1rem; }
+    border-radius: 1em; }
   header .search button {
     width: 5vw;
     height: 2em;
-    border-radius: 1rem;
+    border-radius: 1em;
     padding: 0px 10px;
     align-self: center;
     justify-self: self-start;
@@ -159,8 +217,6 @@ footer {
     background-color: darkgray; }
   h1, h2 {
     font-size: 2.25em; }
-  figure h1 {
-    font-size: 3em; }
   .bookshelf {
     width: 100vw;
     display: grid;
@@ -171,7 +227,7 @@ footer {
     align-items: center; }
   article {
     border: 2px solid darkgrey;
-    border-radius: 5px;
+    border-radius: 1em;
     margin: 10px;
     width: 20vw; }
   article p {
