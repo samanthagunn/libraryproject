@@ -1,0 +1,13 @@
+@use '../base/typography' as *;
+
+footer {
+        font-family: $oswald-font;
+        //position:fixed;
+        bottom: 0;
+        width: 100vw;
+        max-width: $max-w;
+        background-color: gray;
+        height: 10vh;
+        text-align: center;
+        
+    }

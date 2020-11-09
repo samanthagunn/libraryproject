@@ -1,140 +1,118 @@
-html, body {
-  margin: 0; }
-
 header {
   background-color: #464545;
-  margin: 0; }
-
+  margin: 0;
+  width: 100vw;
+  max-width: 100%;
+}
 header h1 {
   color: #fff;
   text-shadow: lime;
   font-size: 3vw;
   font-family: "Oswald", sans-serif;
   margin: 0px 20px 10px 20px;
-  grid-area: a; }
+  grid-area: a;
+}
 
-main {
-  font-size: 1em; }
-
-main h1, main h2 {
+footer {
   font-family: "Oswald", sans-serif;
-  text-align: center; }
-
-main h3 {
-  font-family: "Oswald", sans-serif;
+  bottom: 0;
+  width: 100vw;
+  max-width: 100%;
+  background-color: gray;
+  height: 10vh;
   text-align: center;
-  margin: 0;
-  word-wrap: normal; }
+}
 
-main p {
-  font-family: "Oswald", sans-serif;
-  padding: 20px;
-  margin: 0; }
-
-main button {
-  align-items: center;
-  margin: 0;
-  width: 10em;
-  height: 2em;
-  font-family: "Oswald", sans-serif;
-  font-size: 1.25em;
-  background-color: teal;
-  border-radius: 1em;
-  color: white; }
-
-main section {
-  margin: 0 20;
+.bookshelf {
   width: 100vw;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  flex-wrap: wrap;
   justify-content: center;
-  align-items: center; }
+  align-items: center;
+}
 
-figure {
-  margin: 0;
-  text-align: center; }
-
-figure .hero-text {
-  width: 50vw;
-  position: absolute;
-  z-index: 999;
-  margin: 0 auto;
-  left: 0;
-  right: 0;
-  top: 23%;
-  /* Adjust this value to move the positioned div up and down */
-  text-align: center; }
-
-figure .hero-text h1 {
-  margin: 0;
-  text-shadow: 4px 3px 5px #000;
-  color: white; }
-
-figure img {
-  width: 100vw;
-  height: 50vh;
-  background-size: cover; }
+article {
+  border: 2px solid darkgrey;
+  border-radius: 1em;
+  margin: 10px;
+  width: 20vw;
+}
+article p {
+  padding: 10px;
+  text-align: center;
+  word-wrap: normal;
+  font-style: italic;
+}
+article img {
+  display: block;
+  text-align: center;
+  width: 15vw;
+  padding: 10px;
+  height: auto;
+  margin: auto;
+}
 
 .add-book {
   display: flex;
   flex-direction: row;
   justify-content: center;
   width: 100vw;
-  padding: 20px; }
-
+  padding: 20px;
+}
 .add-book form {
   width: 100vw;
   font-family: "Oswald", sans-serif;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  width: 40vw; }
-
+  width: 40vw;
+}
 .add-book form .book-drop {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   width: 100%;
   align-items: baseline;
-  justify-content: space-between; }
-
-.add-book form .book-drop input[type="date"], .add-book form .book-drop select {
+  justify-content: space-between;
+}
+.add-book form .book-drop input[type=date], .add-book form .book-drop select {
   padding: 12px 20px;
   margin: 8px 0;
   border: 1px solid #ccc;
   border-radius: 1em;
-  box-sizing: border-box; }
-
-.add-book form fieldset, .add-book form input[type="text"], .add-book form textarea {
+  box-sizing: border-box;
+}
+.add-book form fieldset, .add-book form input[type=text], .add-book form textarea {
   width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
   display: inline-block;
   border: 1px solid #ccc;
   border-radius: 1em;
-  box-sizing: border-box; }
-
-.add-book form fieldset button, .add-book form input[type="text"] button, .add-book form textarea button {
-  border-radius: 1em; }
-
-.add-book form fieldset button[type="reset"], .add-book form input[type="text"] button[type="reset"], .add-book form textarea button[type="reset"] {
-  background-color: lightgray; }
-
-.add-book form fieldset textarea, .add-book form input[type="text"] textarea, .add-book form textarea textarea {
-  width: 100%; }
-
+  box-sizing: border-box;
+}
+.add-book form fieldset button, .add-book form input[type=text] button, .add-book form textarea button {
+  border-radius: 1em;
+}
+.add-book form fieldset button[type=reset], .add-book form input[type=text] button[type=reset], .add-book form textarea button[type=reset] {
+  background-color: lightgray;
+}
+.add-book form fieldset textarea, .add-book form input[type=text] textarea, .add-book form textarea textarea {
+  width: 100%;
+}
 .add-book form .checked {
-  color: teal; }
-
+  color: teal;
+}
 .add-book form .fa-star {
-  font-size: 2em; }
-
+  font-size: 2em;
+}
 .add-book .book-cover {
   grid-column: 3;
   display: flex;
   flex-direction: column;
-  padding: 20px; }
-
+  padding: 20px;
+}
 .add-book .book-cover label {
   border: 2px solid darkgrey;
   background-color: lightgray;
@@ -144,29 +122,93 @@ figure img {
   justify-content: center;
   align-self: center;
   width: 20vw;
-  height: 400px; }
-
+  height: 400px;
+}
 .add-book .book-cover input {
   border: 1px solid #ccc;
-  border-radius: 4px; }
+  border-radius: 4px;
+}
 
-footer {
+html, body {
+  margin: 0;
+}
+
+main {
+  font-size: 1em;
+}
+main h1, main h2 {
   font-family: "Oswald", sans-serif;
-  bottom: 0;
+  text-align: center;
+}
+main h3 {
+  font-family: "Oswald", sans-serif;
+  text-align: center;
+  margin: 0;
+  word-wrap: normal;
+}
+main p {
+  font-family: "Oswald", sans-serif;
+  padding: 20px;
+  margin: 0;
+}
+main button {
+  align-items: center;
+  margin: 0;
+  width: 10em;
+  height: 2em;
+  font-family: "Oswald", sans-serif;
+  font-size: 1.25em;
+  background-color: teal;
+  border-radius: 1em;
+  color: white;
+}
+main section {
+  margin: 0 0;
   width: 100vw;
-  background-color: gray;
-  height: 10vh;
-  text-align: center; }
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+figure {
+  margin: 0;
+  text-align: center;
+}
+figure .hero-text {
+  width: 50vw;
+  position: absolute;
+  z-index: 999;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  top: 23%;
+  /* Adjust this value to move the positioned div up and down */
+  text-align: center;
+}
+figure .hero-text h1 {
+  font-size: 3em;
+  margin: 0;
+  text-shadow: 4px 3px 5px #000;
+  color: white;
+}
+figure img {
+  width: 99vw;
+  height: 50vh;
+}
 
 @media only screen and (min-width: 401px) {
   header {
     display: flex;
     flex-direction: row;
     flex-flow: row;
-    justify-content: space-between; }
+    justify-content: space-between;
+  }
   header .search {
     align-self: center;
-    padding: 20px; }
+    padding: 20px;
+  }
   header .search input {
     height: 2em;
     width: 20vw;
@@ -174,7 +216,8 @@ footer {
     justify-self: center;
     align-self: center;
     border: none;
-    border-radius: 1em; }
+    border-radius: 1em;
+  }
   header .search button {
     width: 5vw;
     height: 2em;
@@ -186,63 +229,50 @@ footer {
     font-size: 17px;
     border: 3px solid teal;
     cursor: pointer;
-    grid-area: d; }
+    grid-area: d;
+  }
   header .search button:hover {
-    background-color: teal; }
+    background-color: teal;
+  }
+
   .hamburger-container {
-    display: none; }
+    display: none;
+  }
+
   nav {
     justify-self: center;
     align-self: center;
     grid-area: b;
     font-family: "Oswald", sans-serif;
-    position: relative; }
+    position: relative;
+  }
   nav ul {
     padding: 0;
     display: flex;
     flex-flow: row;
     flex: auto;
     list-style: none;
-    overflow: hidden; }
+    overflow: hidden;
+  }
   nav li a {
     text-decoration: none;
     color: white;
     text-align: center;
     padding: 14px 16px;
-    font-size: 17px; }
+    font-size: 17px;
+  }
   nav li:hover {
     color: black;
-    background-color: teal; }
+    background-color: teal;
+  }
   nav li:active {
-    background-color: darkgray; }
-  h1, h2 {
-    font-size: 2.25em; }
-  .bookshelf {
-    width: 100vw;
-    display: grid;
-    grid-template-columns: auto auto auto auto;
-    grid-row: auto;
-    grid-gap: 0px;
-    justify-content: center;
-    align-items: center; }
-  article {
-    border: 2px solid darkgrey;
-    border-radius: 1em;
-    margin: 10px;
-    width: 20vw; }
-  article p {
-    padding: 10px;
-    text-align: center;
-    word-wrap: normal;
-    font-style: italic; }
-  article img {
-    display: block;
-    text-align: center;
-    width: 15vw;
-    padding: 10px;
-    height: auto;
-    margin: auto; } }
+    background-color: darkgray;
+  }
 
+  h1, h2 {
+    font-size: 2.25em;
+  }
+}
 @media screen and (max-width: 400px) {
   header {
     height: 60px;
@@ -250,26 +280,32 @@ footer {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
-    align-items: center; }
+    align-items: center;
+  }
   header h1 {
     font-size: 2em;
     margin: 0;
-    padding: 10px; }
+    padding: 10px;
+  }
   header .search {
-    padding: 5px; }
+    padding: 5px;
+  }
   header .hamburger-container {
     margin-right: 5vw;
     padding: 6px 12px;
     border: 2px solid #000;
-    position: relative; }
+    position: relative;
+  }
   header .hamburger-container > div {
     width: 22px;
     height: 2px;
     background: #000;
-    margin-bottom: 6px; }
+    margin-bottom: 6px;
+  }
   header .hamburger-container > div:last-of-type {
-    margin-bottom: 0; }
-  header .hamburger-container input[type="checkbox"] {
+    margin-bottom: 0;
+  }
+  header .hamburger-container input[type=checkbox] {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -279,50 +315,69 @@ footer {
     left: 0;
     margin: 0;
     box-shadow: 0px 2px 5px 5px rgba(0, 0, 0, 0.3);
-    transition: box-shadow .5s;
-    appearance: none; }
-  header .hamburger-container input[type="checkbox"]:checked {
+    transition: box-shadow 0.5s;
+    appearance: none;
+  }
+  header .hamburger-container input[type=checkbox]:checked {
     box-shadow: none;
-    transition: box-shadow .5s; }
-  header .hamburger-container input[type="checkbox"]:checked + nav {
+    transition: box-shadow 0.5s;
+  }
+  header .hamburger-container input[type=checkbox]:checked + nav {
     display: block;
-    width: 100vw; }
-  header .hamburger-container input[type="checkbox"] + nav {
+    width: 100vw;
+  }
+  header .hamburger-container input[type=checkbox] + nav {
     display: none;
     position: fixed;
     top: 60px;
     width: 100%;
     left: 0;
     text-align: center;
-    background: lightgray; }
-  header .hamburger-container input[type="checkbox"] + nav a {
+    background: lightgray;
+  }
+  header .hamburger-container input[type=checkbox] + nav a {
     text-decoration: none;
-    color: black; }
-  header .hamburger-container input[type="checkbox"] + nav ul {
+    color: black;
+  }
+  header .hamburger-container input[type=checkbox] + nav ul {
     font-family: "Oswald", sans-serif;
     background: lightgray;
-    list-style: none; }
+    list-style: none;
+  }
+
   article {
     width: 70vw;
     border: 2px solid darkgrey;
     border-radius: 5px;
-    margin: 10px; }
+    margin: 10px;
+  }
   article p {
     padding: 10px;
     text-align: center;
     word-wrap: normal;
-    font-style: italic; }
+    font-style: italic;
+  }
   article img {
     display: block;
     text-align: center;
     padding: 10px;
     height: auto;
     width: 60vw;
-    margin: auto; }
+    margin: auto;
+  }
+
   .desktop {
-    display: none; }
+    display: none;
+  }
+
   h2 {
-    font-size: 1.5em; }
+    font-size: 1.5em;
+  }
+
   figure h1 {
     font-size: 2em;
-    word-wrap: normal; } }
+    word-wrap: normal;
+  }
+}
+
+/*# sourceMappingURL=index.css.map */

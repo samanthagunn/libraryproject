@@ -1,28 +1,14 @@
-$base-font-size: 1em;
-$seaweed-font: 'Seaweed Script', cursive;
-$oswald-font: 'Oswald', sans-serif;
-$hover-link: teal;
-$no-margin: 0;
-$border1em: 1em;
+@use '../styles/base/typography' as *;
+@use 'layout/header' as *;
+@use 'layout/footer' as *;
+@use 'components/bookshelf' as *;
+@use 'components/addbook' as *;
 
 html, body {
-    margin: $no-margin;
-}
-header{
-    background-color: #464545 ;
-    margin: $no-margin;
-    
-    h1{
-        color: #fff;
-        text-shadow: lime;
-        font-size: 3vw;
-        font-family: $oswald-font;
-        margin: 0px 20px 10px 20px;
-        grid-area: a;
-    }
-    
+    margin: $no-margin; 
     
 }
+
 
 main {
     
@@ -55,8 +41,9 @@ main {
         color: white;
     }
     section {
-        margin: 0 20;
+        margin: 0 0;
         width: 100vw;
+        max-width: $max-w;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -81,125 +68,21 @@ figure {
         text-align: center;
         
         h1 {
+            font-size: 3em;
             margin: $no-margin;
             text-shadow: 4px 3px 5px #000;
             color: white;
         }
     }
     img {
-        width: 100vw;
+        width: 99vw;
         height: 50vh;
-        background-size: cover;
+        // background-size: cover;
         
     }
     
 }
 
-//Add Book
-.add-book{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    width: 100vw; 
-    padding: 20px;
-form {
-    
-    width: 100vw;
-    font-family: $oswald-font;
-    // margin: 40px;
-    // padding: 20px;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    // justify-content: space-between;
-    // grid-template-columns: repeat(3,3fr);
-    // grid-column: 1 / span 2;
-    width: 40vw;
-    
-.book-drop {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        width: 100%;
-        align-items: baseline;
-        justify-content: space-between;
-    
-    input[type="date"], select {
-        padding: 12px 20px;
-    margin: 8px 0;
-    border: 1px solid #ccc;
-    border-radius: $border1em;
-    box-sizing: border-box;
-    }
-    }   
-    
-fieldset, input[type="text"], textarea {
-    width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    border-radius: $border1em;
-    box-sizing: border-box;
-button {
-    border-radius: $border1em;
-}
-
-    button[type="reset"]{
-        background-color: lightgray;
-
-    }
-
-textarea{
-    width: 100%;
-} 
-}
-//Stars 
-.checked {
-    color: teal;
-  }
-  .fa-star {
-      font-size: 2em;
-  }
-
-}
-
-
-.book-cover {
-    grid-column: 3;
-    display: flex;
-    flex-direction: column;
-    padding: 20px;
-    // margin: 10px;
-    label{
-        border: 2px solid darkgrey;
-        background-color: lightgray;
-        box-sizing: border-box;
-        text-align: center;
-        border-radius: $border1em;
-        justify-content: center;
-        align-self: center;
-        width: 20vw;
-        height: 400px;}
-     input{   
-        border: 1px solid #ccc;
-        border-radius: 4px;
-        
-        
-    }
-    
-}
-}
-footer {
-    font-family: $oswald-font;
-    //position:fixed;
-    bottom: 0;
-    width: 100vw;
-    background-color: gray;
-    height: 10vh;
-    text-align: center;
-    
-}
 @media only screen and (min-width:401px) {
     header{
         display: flex;
@@ -284,39 +167,8 @@ button {
         font-size: 2.25em;
     }
     
-    .bookshelf {
-        width: 100vw;
-        display: grid;
-        grid-template-columns: auto auto auto auto;
-        grid-row: auto;
-        grid-gap: 0px;
-        justify-content: center;
-        align-items: center;
-        
-    }
-    article {
-        border: 2px solid darkgrey;
-        border-radius: $border1em;
-        margin: 10px;
-        width: 20vw;
-        
-        p {
-            padding: 10px;
-            text-align: center;
-            word-wrap: normal;
-            font-style: italic;
-        }
-        img {
-            display: block;
-            text-align: center;
-            width: 15vw;
-            padding: 10px;
-            height: auto;
-            margin: auto;
-        }
-    }
     
-    
+  
 }
 
 @media screen and (max-width: 400px) {

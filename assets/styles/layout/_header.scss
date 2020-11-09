@@ -1,6 +1,10 @@
-header{
+@use '../base/typography' as *;
+
+header {
     background-color: #464545 ;
     margin: $no-margin;
+    width: 100vw;
+    max-width: $max-w;
     
     h1{
         color: #fff;

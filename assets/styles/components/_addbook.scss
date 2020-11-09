@@ -1,0 +1,96 @@
+@use '../base/typography' as *;
+
+.add-book{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100vw; 
+    padding: 20px;
+form {
+    
+    width: 100vw;
+    font-family: $oswald-font;
+    // margin: 40px;
+    // padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    // justify-content: space-between;
+    // grid-template-columns: repeat(3,3fr);
+    // grid-column: 1 / span 2;
+    width: 40vw;
+    
+.book-drop {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        width: 100%;
+        align-items: baseline;
+        justify-content: space-between;
+    
+    input[type="date"], select {
+        padding: 12px 20px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: $border1em;
+    box-sizing: border-box;
+    }
+    }   
+    
+fieldset, input[type="text"], textarea {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: $border1em;
+    box-sizing: border-box;
+button {
+    border-radius: $border1em;
+}
+
+    button[type="reset"]{
+        background-color: lightgray;
+
+    }
+
+textarea{
+    width: 100%;
+} 
+}
+//Stars 
+.checked {
+    color: teal;
+  }
+  .fa-star {
+      font-size: 2em;
+  }
+
+}
+
+
+.book-cover {
+    grid-column: 3;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    // margin: 10px;
+    label{
+        border: 2px solid darkgrey;
+        background-color: lightgray;
+        box-sizing: border-box;
+        text-align: center;
+        border-radius: $border1em;
+        justify-content: center;
+        align-self: center;
+        width: 20vw;
+        height: 400px;}
+     input{   
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        
+        
+    }
+    
+}
+}
