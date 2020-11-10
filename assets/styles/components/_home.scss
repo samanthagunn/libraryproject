@@ -1,0 +1,127 @@
+@use '../base/typography' as *;
+@use '../abstracts/mixins' as *;
+@use '../components/navbar' as *;
+
+#home {
+    font-size: $base-font-size;
+    h1, h2 {
+        @include mobile {
+        font-family:$oswald-font;
+        text-align: center;
+        font-size: 1.5em;
+        }
+        @include desktop {
+                font-size: 2.25em;
+        
+        }
+    }
+    h3 {
+        font-family: $oswald-font;
+        text-align: center;
+        margin: $no-margin;
+        word-wrap: normal;
+    }
+    section {
+    margin: 0 0;
+    width: 100vw;
+    max-width: $max-w;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    }
+    
+    p {
+        @include desktop {
+        font-family: $oswald-font;
+        padding: 20px;
+        margin: $no-margin;
+        }
+        @include mobile {
+            padding: 10px;
+        text-align: center;
+        word-wrap: normal;
+        font-style: italic;
+        }
+    }
+    
+
+}
+article {
+    width: 70vw;
+    border: 2px solid darkgrey;
+    border-radius: 5px;
+    margin: 10px;
+    
+    p {
+        padding: 10px;
+        text-align: center;
+        word-wrap: normal;
+        font-style: italic;
+    }
+    img {
+        display: block;
+        text-align: center;
+        padding: 10px;
+        height: auto;
+        width: 60vw;
+        margin: auto;
+    }
+}
+
+h2 {
+    font-size: 1.5em;
+}
+figure {
+    margin: 0;
+    text-align: center;
+    
+    .hero-text {
+        width: 50vw;
+        position: absolute;
+        z-index: 999;
+        margin: 0 auto;
+        left: 0;
+        right: 0;
+        top: 23%; /* Adjust this value to move the positioned div up and down */
+        text-align: center;
+        
+        h1 {
+            font-size: 3em;
+            margin: $no-margin;
+            text-shadow: 4px 3px 5px #000;
+            color: white;
+            @include mobile {
+                font-size: 2em;
+                word-wrap: normal;
+            }
+        }
+    }
+    img {
+        width: 99vw;
+        height: 50vh;
+        
+        
+    }
+    article {
+        width: 70vw;
+        border: 2px solid darkgrey;
+        border-radius: 5px;
+        margin: 10px;
+        
+        p {
+            padding: 10px;
+            text-align: center;
+            word-wrap: normal;
+        }
+        img {
+            display: block;
+            text-align: center;
+            padding: 10px;
+            height: auto;
+            width: 60vw;
+            margin: auto;
+        }
+    }
+    
+}

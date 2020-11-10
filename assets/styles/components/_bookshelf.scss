@@ -5,31 +5,27 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    // grid-template-columns: auto auto auto auto;
-    // grid-row: auto;
-    // grid-gap: 0px;
     justify-content: center;
     align-items: center;
-    
-}
-article {
-    border: 2px solid darkgrey;
-    border-radius: $border1em;
-    margin: 10px;
-    width: 20vw;
-    
-    p {
-        padding: 10px;
-        text-align: center;
-        word-wrap: normal;
-        font-style: italic;
-    }
-    img {
-        display: block;
-        text-align: center;
-        width: 15vw;
-        padding: 10px;
-        height: auto;
-        margin: auto;
+    article {
+        border: 2px solid darkgrey;
+        border-radius: $border1em;
+        margin: 10px;
+        width: 20vw;
+        
+        p {
+            padding: 10px;
+            text-align: center;
+            word-wrap: normal;
+            font-style: italic;
+        }
+        img {
+            display: block;
+            text-align: center;
+            width: 15vw;
+            padding: 10px;
+            height: auto;
+            margin: auto;
+        }
     }
 }

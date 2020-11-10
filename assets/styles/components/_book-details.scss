@@ -1,0 +1,31 @@
+@use '../base/typography' as *;
+
+#publish {
+    font-style: italic;
+}
+#detailpage {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: flex-start;
+
+   
+}
+ #bookcover {
+    margin: 10px;
+    padding: 20px;
+
+.checked {
+    color: teal;
+  }
+.stars {  
+    padding:  30px 0px;
+  .fa-star {
+      font-size: 1em;
+  }
+}
+
+ }
+
+
+

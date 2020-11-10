@@ -1,3 +1,42 @@
+@media (min-width: 1024px) {
+  .desktop {
+    display: flex;
+    flex-direction: row;
+    justify-self: center;
+    align-self: center;
+    grid-area: b;
+    font-family: "Oswald", sans-serif;
+    position: relative;
+  }
+  .desktop ul {
+    padding: 0;
+    display: flex;
+    flex-flow: row;
+    flex: auto;
+    list-style: none;
+    overflow: hidden;
+  }
+  .desktop li a {
+    text-decoration: none;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    font-size: 17px;
+  }
+  .desktop li:hover {
+    color: black;
+    background-color: teal;
+  }
+  .desktop li:active {
+    background-color: darkgray;
+  }
+}
+@media (min-width: 200px) and (max-width: 767px) {
+  .desktop {
+    display: none;
+  }
+}
+
 header {
   background-color: #464545;
   margin: 0;
@@ -6,11 +45,65 @@ header {
 }
 header h1 {
   color: #fff;
-  text-shadow: lime;
   font-size: 3vw;
   font-family: "Oswald", sans-serif;
   margin: 0px 20px 10px 20px;
   grid-area: a;
+}
+@media (min-width: 1024px) {
+  header {
+    display: flex;
+    flex-direction: row;
+    flex-flow: row;
+    justify-content: space-between;
+  }
+  header .search {
+    align-self: center;
+    padding: 20px;
+  }
+  header .search input {
+    height: 2em;
+    width: 20vw;
+    text-align: center;
+    justify-self: center;
+    align-self: center;
+    border: none;
+    border-radius: 1em;
+  }
+  header .search button {
+    width: 5vw;
+    height: 2em;
+    border-radius: 1em;
+    padding: 0px 10px;
+    align-self: center;
+    justify-self: self-start;
+    background: darkgray;
+    font-size: 17px;
+    border: 3px solid teal;
+    cursor: pointer;
+    grid-area: d;
+  }
+  header .search button:hover {
+    background-color: teal;
+  }
+}
+@media (min-width: 200px) and (max-width: 767px) {
+  header {
+    height: 60px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+  }
+  header h1 {
+    font-size: 2em;
+    margin: 0;
+    padding: 10px;
+  }
+  header .search {
+    padding: 5px;
+  }
 }
 
 footer {
@@ -31,20 +124,19 @@ footer {
   justify-content: center;
   align-items: center;
 }
-
-article {
+.bookshelf article {
   border: 2px solid darkgrey;
   border-radius: 1em;
   margin: 10px;
   width: 20vw;
 }
-article p {
+.bookshelf article p {
   padding: 10px;
   text-align: center;
   word-wrap: normal;
   font-style: italic;
 }
-article img {
+.bookshelf article img {
   display: block;
   text-align: center;
   width: 15vw;
@@ -129,40 +221,53 @@ article img {
   border-radius: 4px;
 }
 
-html, body {
-  margin: 0;
+#publish {
+  font-style: italic;
 }
 
-main {
+#detailpage {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: flex-start;
+}
+
+#bookcover {
+  margin: 10px;
+  padding: 20px;
+}
+#bookcover .checked {
+  color: teal;
+}
+#bookcover .stars {
+  padding: 30px 0px;
+}
+#bookcover .stars .fa-star {
   font-size: 1em;
 }
-main h1, main h2 {
-  font-family: "Oswald", sans-serif;
-  text-align: center;
+
+#home {
+  font-size: 1em;
 }
-main h3 {
+@media (min-width: 200px) and (max-width: 767px) {
+  #home h1, #home h2 {
+    font-family: "Oswald", sans-serif;
+    text-align: center;
+    font-size: 1.5em;
+  }
+}
+@media (min-width: 1024px) {
+  #home h1, #home h2 {
+    font-size: 2.25em;
+  }
+}
+#home h3 {
   font-family: "Oswald", sans-serif;
   text-align: center;
   margin: 0;
   word-wrap: normal;
 }
-main p {
-  font-family: "Oswald", sans-serif;
-  padding: 20px;
-  margin: 0;
-}
-main button {
-  align-items: center;
-  margin: 0;
-  width: 10em;
-  height: 2em;
-  font-family: "Oswald", sans-serif;
-  font-size: 1.25em;
-  background-color: teal;
-  border-radius: 1em;
-  color: white;
-}
-main section {
+#home section {
   margin: 0 0;
   width: 100vw;
   max-width: 100%;
@@ -170,6 +275,46 @@ main section {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+@media (min-width: 1024px) {
+  #home p {
+    font-family: "Oswald", sans-serif;
+    padding: 20px;
+    margin: 0;
+  }
+}
+@media (min-width: 200px) and (max-width: 767px) {
+  #home p {
+    padding: 10px;
+    text-align: center;
+    word-wrap: normal;
+    font-style: italic;
+  }
+}
+
+article {
+  width: 70vw;
+  border: 2px solid darkgrey;
+  border-radius: 5px;
+  margin: 10px;
+}
+article p {
+  padding: 10px;
+  text-align: center;
+  word-wrap: normal;
+  font-style: italic;
+}
+article img {
+  display: block;
+  text-align: center;
+  padding: 10px;
+  height: auto;
+  width: 60vw;
+  margin: auto;
+}
+
+h2 {
+  font-size: 1.5em;
 }
 
 figure {
@@ -193,119 +338,58 @@ figure .hero-text h1 {
   text-shadow: 4px 3px 5px #000;
   color: white;
 }
+@media (min-width: 200px) and (max-width: 767px) {
+  figure .hero-text h1 {
+    font-size: 2em;
+    word-wrap: normal;
+  }
+}
 figure img {
   width: 99vw;
   height: 50vh;
 }
+figure article {
+  width: 70vw;
+  border: 2px solid darkgrey;
+  border-radius: 5px;
+  margin: 10px;
+}
+figure article p {
+  padding: 10px;
+  text-align: center;
+  word-wrap: normal;
+}
+figure article img {
+  display: block;
+  text-align: center;
+  padding: 10px;
+  height: auto;
+  width: 60vw;
+  margin: auto;
+}
 
-@media only screen and (min-width: 401px) {
-  header {
-    display: flex;
-    flex-direction: row;
-    flex-flow: row;
-    justify-content: space-between;
-  }
-  header .search {
-    align-self: center;
-    padding: 20px;
-  }
-  header .search input {
-    height: 2em;
-    width: 20vw;
-    text-align: center;
-    justify-self: center;
-    align-self: center;
-    border: none;
-    border-radius: 1em;
-  }
-  header .search button {
-    width: 5vw;
-    height: 2em;
-    border-radius: 1em;
-    padding: 0px 10px;
-    align-self: center;
-    justify-self: self-start;
-    background: darkgray;
-    font-size: 17px;
-    border: 3px solid teal;
-    cursor: pointer;
-    grid-area: d;
-  }
-  header .search button:hover {
-    background-color: teal;
-  }
-
+@media (min-width: 1024px) {
   .hamburger-container {
     display: none;
   }
-
-  nav {
-    justify-self: center;
-    align-self: center;
-    grid-area: b;
-    font-family: "Oswald", sans-serif;
-    position: relative;
-  }
-  nav ul {
-    padding: 0;
-    display: flex;
-    flex-flow: row;
-    flex: auto;
-    list-style: none;
-    overflow: hidden;
-  }
-  nav li a {
-    text-decoration: none;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    font-size: 17px;
-  }
-  nav li:hover {
-    color: black;
-    background-color: teal;
-  }
-  nav li:active {
-    background-color: darkgray;
-  }
-
-  h1, h2 {
-    font-size: 2.25em;
-  }
 }
-@media screen and (max-width: 400px) {
-  header {
-    height: 60px;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-  }
-  header h1 {
-    font-size: 2em;
-    margin: 0;
-    padding: 10px;
-  }
-  header .search {
-    padding: 5px;
-  }
-  header .hamburger-container {
+@media (min-width: 200px) and (max-width: 767px) {
+  .hamburger-container {
     margin-right: 5vw;
     padding: 6px 12px;
     border: 2px solid #000;
     position: relative;
   }
-  header .hamburger-container > div {
+  .hamburger-container > div {
     width: 22px;
     height: 2px;
     background: #000;
     margin-bottom: 6px;
   }
-  header .hamburger-container > div:last-of-type {
+  .hamburger-container > div:last-of-type {
     margin-bottom: 0;
   }
-  header .hamburger-container input[type=checkbox] {
+  .hamburger-container input[type=checkbox] {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -318,15 +402,15 @@ figure img {
     transition: box-shadow 0.5s;
     appearance: none;
   }
-  header .hamburger-container input[type=checkbox]:checked {
+  .hamburger-container input[type=checkbox]:checked {
     box-shadow: none;
     transition: box-shadow 0.5s;
   }
-  header .hamburger-container input[type=checkbox]:checked + nav {
+  .hamburger-container input[type=checkbox]:checked + nav {
     display: block;
     width: 100vw;
   }
-  header .hamburger-container input[type=checkbox] + nav {
+  .hamburger-container input[type=checkbox] + nav {
     display: none;
     position: fixed;
     top: 60px;
@@ -335,49 +419,34 @@ figure img {
     text-align: center;
     background: lightgray;
   }
-  header .hamburger-container input[type=checkbox] + nav a {
+  .hamburger-container input[type=checkbox] + nav a {
     text-decoration: none;
     color: black;
   }
-  header .hamburger-container input[type=checkbox] + nav ul {
+  .hamburger-container input[type=checkbox] + nav ul {
     font-family: "Oswald", sans-serif;
     background: lightgray;
     list-style: none;
   }
+}
 
-  article {
-    width: 70vw;
-    border: 2px solid darkgrey;
-    border-radius: 5px;
-    margin: 10px;
-  }
-  article p {
-    padding: 10px;
-    text-align: center;
-    word-wrap: normal;
-    font-style: italic;
-  }
-  article img {
-    display: block;
-    text-align: center;
-    padding: 10px;
-    height: auto;
-    width: 60vw;
-    margin: auto;
-  }
+html, body {
+  margin: 0;
+}
 
-  .desktop {
-    display: none;
-  }
-
-  h2 {
-    font-size: 1.5em;
-  }
-
-  figure h1 {
-    font-size: 2em;
-    word-wrap: normal;
-  }
+main {
+  font-family: "Oswald", sans-serif;
+}
+main button {
+  align-items: center;
+  margin: 0;
+  width: 10em;
+  height: 2em;
+  font-family: "Oswald", sans-serif;
+  font-size: 1.25em;
+  background-color: teal;
+  border-radius: 1em;
+  color: white;
 }
 
 /*# sourceMappingURL=index.css.map */
