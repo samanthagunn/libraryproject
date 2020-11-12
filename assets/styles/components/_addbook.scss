@@ -1,23 +1,22 @@
 @use '../base/typography' as *;
-
+h2 {
+    text-align: center;
+}
 .add-book{
     display: flex;
     flex-direction: row;
     justify-content: center;
     width: 100vw; 
     padding: 20px;
+
+    
 form {
     
     width: 100vw;
     font-family: $oswald-font;
-    // margin: 40px;
-    // padding: 20px;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    // justify-content: space-between;
-    // grid-template-columns: repeat(3,3fr);
-    // grid-column: 1 / span 2;
     width: 40vw;
     
 .book-drop {

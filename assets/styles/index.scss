@@ -7,6 +7,7 @@
 @use 'components/book-details' as *;
 @use 'components/home' as *;
 @use 'components/hamburger-button' as *;
+@use 'abstracts/mixins' as *;
 
 
 html, body {
@@ -18,16 +19,24 @@ html, body {
 main {
     font-family:$oswald-font;
     button {
+        font-family: $oswald-font;
         align-items: center;
         margin: 0;
-        width: 10em;
-        height: 2em;
-        font-family: $oswald-font;
-        font-size: 1.25em;
         background-color: $hover-link;
         border-radius: $border1em;
         color: white;
+
+        @include mobile {
+        width: 30vw;
+        height: 2em;
+        font-size: 1rem;
+        }
+        @include desktop {
+        width: 10em;
+        height: 2em;
+        font-size: 1.25em;
     }
     
     
+}
 }

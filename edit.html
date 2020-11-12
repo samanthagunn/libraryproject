@@ -1,48 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/styles/index.css">
-    <link href="https://fonts.googleapis.com/css2?family=Oswald&family=Seaweed+Script&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    
-    <title>The Library</title>
-</head>
-<body>
-    <header>
-        <h1>The Library</h1>
-    <!-- Mobile Menu-->
-    <div class="hamburger-container">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="assets/styles/index.css">
+        <script type="text/javascript" src="./assets/styles/components/navbar.js"></script>
+        <link href="https://fonts.googleapis.com/css2?family=Oswald&family=Seaweed+Script&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         
+        <title>The Library</title>
+    </head>
+    <body>
+        <header>
+            
+        <div class="mainnav">
+            <h1>The Library</h1>
+            <a href="javascript:void(0);" class="icon" onclick="myFunction()">    
             <i class="fas fa-bars"></i> 
-           
-        
-        <input type="checkbox"> 
-        
-        <nav >
+            </a>
+    
+        <nav id="myLinks">
             
         <ul>
         <li><a href="index.html">Home</a></li>
         <li><a href="bookshelf.html">Bookshelf</a></li>
         <li><a href="add.html">Add Book</a> </li>
+        <li id="mobilesearch"><input type="text" placeholder="Search...">
+            <button type="submit"><i class="fa fa-search"></i></button></li>
         </ul>
     </nav>
+    <div class="search">
+        <input type="text" placeholder="Search...">
+        <button type="submit"><i class="fa fa-search"></i></button>
     </div>
-
-    <!-- Desktop Menu-->
-    <nav class="desktop">
-            
-        <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="bookshelf.html">Bookshelf</a></li>
-        <li><a href="add.html">Add Book</a> </li>
-        </ul>
-    </nav>
-
-    <input type="text" placeholder="Search..">
-    <button type="submit"><i class="fa fa-search"></i></button>
-</header>
+    </div>
+        </header>    
     <main>
     <section>
         <form class="edit-book">

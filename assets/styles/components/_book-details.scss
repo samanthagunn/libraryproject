@@ -1,14 +1,22 @@
 @use '../base/typography' as *;
+@use '../abstracts/mixins' as *;
 
 #publish {
     font-style: italic;
 }
 #detailpage {
+    @include desktop {
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-content: flex-start;
-
+    }
+    @include mobile {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-content: center;
+    }
    
 }
  #bookcover {

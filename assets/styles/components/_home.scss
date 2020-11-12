@@ -5,9 +5,10 @@
 #home {
     font-size: $base-font-size;
     h1, h2 {
-        @include mobile {
         font-family:$oswald-font;
         text-align: center;
+        @include mobile {
+        
         font-size: 1.5em;
         }
         @include desktop {
@@ -15,12 +16,8 @@
         
         }
     }
-    h3 {
-        font-family: $oswald-font;
-        text-align: center;
-        margin: $no-margin;
-        word-wrap: normal;
-    }
+    
+
     section {
     margin: 0 0;
     width: 100vw;
@@ -41,10 +38,67 @@
             padding: 10px;
         text-align: center;
         word-wrap: normal;
-        font-style: italic;
+        
         }
     }
-    
+    figure {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-auto-rows: auto;
+        margin: 0;
+        text-align: center;
+        
+        .hero-text {
+            
+            grid-column: 1 / 3;
+            grid-row: 2 / 3;
+            padding: 20px;
+            text-align: center;
+            
+            h1 {
+                font-size: 3em;
+                margin: $no-margin;
+                text-shadow: 4px 3px 5px #000;
+                color: white;
+                @include mobile {
+                    font-size: 2em;
+                    word-wrap: normal;
+                }
+                p {
+                    padding: 0;
+                }
+            }
+        }
+        img {
+            grid-column: 1 / 3;
+            grid-row: 1 / 4;
+            width: 100vw;
+            height: 50vh;
+            
+            
+        }
+        article {
+            width: 70vw;
+            border: 2px solid darkgrey;
+            border-radius: 5px;
+            margin: 10px;
+            
+            p {
+                padding: 10px;
+                text-align: center;
+                word-wrap: normal;
+            }
+            img {
+                display: block;
+                text-align: center;
+                padding: 10px;
+                height: auto;
+                width: 60vw;
+                margin: auto;
+            }
+        }
+        
+    }
 
 }
 article {
@@ -53,12 +107,6 @@ article {
     border-radius: 5px;
     margin: 10px;
     
-    p {
-        padding: 10px;
-        text-align: center;
-        word-wrap: normal;
-        font-style: italic;
-    }
     img {
         display: block;
         text-align: center;
@@ -72,56 +120,4 @@ article {
 h2 {
     font-size: 1.5em;
 }
-figure {
-    margin: 0;
-    text-align: center;
-    
-    .hero-text {
-        width: 50vw;
-        position: absolute;
-        z-index: 999;
-        margin: 0 auto;
-        left: 0;
-        right: 0;
-        top: 23%; /* Adjust this value to move the positioned div up and down */
-        text-align: center;
-        
-        h1 {
-            font-size: 3em;
-            margin: $no-margin;
-            text-shadow: 4px 3px 5px #000;
-            color: white;
-            @include mobile {
-                font-size: 2em;
-                word-wrap: normal;
-            }
-        }
-    }
-    img {
-        width: 99vw;
-        height: 50vh;
-        
-        
-    }
-    article {
-        width: 70vw;
-        border: 2px solid darkgrey;
-        border-radius: 5px;
-        margin: 10px;
-        
-        p {
-            padding: 10px;
-            text-align: center;
-            word-wrap: normal;
-        }
-        img {
-            display: block;
-            text-align: center;
-            padding: 10px;
-            height: auto;
-            width: 60vw;
-            margin: auto;
-        }
-    }
-    
-}
+

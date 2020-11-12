@@ -1,15 +1,18 @@
 @use '../base/typography' as *;
 @use '../abstracts/mixins' as *;
 
-.desktop{
-    @include desktop {
+.mainnav {
+    font-family: $oswald-font;
+@include desktop {
         display: flex;
         flex-direction: row;
-    justify-self: center;
-    align-self: center;
-    grid-area: b;
-    font-family: $oswald-font;
-    position: relative;
+    justify-content: space-between;
+    align-items: center;
+    width: 100vw;
+    
+    #mobilesearch{
+        display: none;
+    }
     ul {
         padding: 0;
         display: flex;
@@ -25,23 +28,93 @@ li{
     color: white;
     text-align: center;
     padding: 14px 16px;
-    font-size: 17px;
+    font-size: 1.25vw;
     }
     &:hover {
         color: black;
         background-color: $hover-link;
-        
-        
     }
     &:active {
         background-color: darkgray;
     }
 }
 }
-
-    @include mobile {
-        display: none;
+@include mobile {
+        position: relative;
+        background-color: #333;
+        overflow: hidden;
+        display: block;
+    
+    h1 {
+        font-size: 2em;
+        margin: $no-margin;
+        padding: 10px;
     }
+    
+        .icon {
+            background: teal;
+            display: block;
+            position: absolute;
+            right: 10px;
+            top: 10px;
+          }
+        
+    a {
+        padding: 10px;
+        color: white;
+        text-decoration: none;
+        font-size: 1em;
+        
+        
+    }
+    ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        }
+    li{
+        display: inline block;
+        text-align: center;
+    }
+    }
+@include tablet {
+        background-color: #333;
+        overflow: hidden;
+        
+    
+    h1 {
+        font-size: 2em;
+        margin: $no-margin;
+        padding: 10px;
+    }
+    
+        .icon {
+            background: teal;
+            display: block;
+            position: absolute;
+            right: 10px;
+            top: 10px;
+          }
+        
+    a {
+        padding: 10px;
+        color: white;
+        text-decoration: none;
+        font-size: 1em;
+        
+        
+    }
+    ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        }
+    li{
+        display: inline block;
+        text-align: center;
+    }
+    }
+}
 
     
-}
+

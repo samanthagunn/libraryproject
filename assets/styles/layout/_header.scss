@@ -3,7 +3,7 @@
 @use '../components/navbar' as *;
 
 header {
-    background-color: #464545 ;
+    background-color: #333 ;
     margin: $no-margin;
     width: 100vw;
     max-width: $max-w;
@@ -13,12 +13,8 @@ header {
         font-size: 3vw;
         font-family: $oswald-font;
         margin: 0px 20px 10px 20px;
-        grid-area: a;
     }
 
-    
-  
-    
     @include desktop {
         display: flex;
         flex-direction: row;
@@ -28,20 +24,17 @@ header {
             align-self: center;
             padding: 20px;
         input {
-            height: 2em;
+            height: 5vh;
             width: 20vw;
             text-align: center;
             justify-self: center;
             align-self: center;
             border: none;
             border-radius: $border1em
-            
-            
-        
         }
         button {
             width: 5vw;
-            height: 2em;
+            height: 5vh;
             border-radius: $border1em;
             padding: 0px 10px;
             align-self: center;
@@ -59,22 +52,68 @@ header {
     }
     }
     @include mobile {
-        height: 60px;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-    h1 {
-        font-size: 2em;
-        margin: $no-margin;
-        padding: 10px;
-    }
     .search {
-        padding: 5px;
+        display: none;
     }
+    #mobilesearch {
+            
+        align-self: center;
+        padding: 20px;
+    input {
+        height: 2em;
+        width: 50vw;
+        text-align: center;
+        justify-self: center;
+        align-self: center;
+        border: none;
+        border-radius: $border1em
+    }
+    button {
+        width: 20vw;
+        height: 2em;
+        border-radius: $border1em;
+        padding: 0px 10px;
+        align-self: center;
+        justify-self: self-start;
+        background: darkgray;
+        font-size: 17px;
+        border: 3px solid teal;
     }
 }
+    }
+
+    @include tablet {
+        .search {
+            display: none;
+        }
+        #mobilesearch {
+            
+            align-self: center;
+            padding: 20px;
+        input {
+            height: 2em;
+            width: 30vw;
+            text-align: center;
+            justify-self: center;
+            align-self: center;
+            border: none;
+            border-radius: $border1em
+        }
+        button {
+            width: 5vw;
+            height: 2em;
+            border-radius: $border1em;
+            padding: 0px 10px;
+            align-self: center;
+            justify-self: self-start;
+            background: darkgray;
+            font-size: 17px;
+            border: 3px solid teal;
+        }
+    }
+    }
+    }
+
     
     
 
