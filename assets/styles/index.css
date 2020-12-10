@@ -1,5 +1,13 @@
+@import url(https://fonts.googleapis.com/css2?family=Oswald&family=Seaweed+Script&display=swap);
+@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css);
+@import url(https://fonts.googleapis.com/icon?family=Material+Icons);
 .mainnav {
   font-family: "Oswald", sans-serif;
+  background-color: #333;
+}
+.mainnav__sitetitle {
+  color: #fff;
+  margin: 0px 20px 10px 20px;
 }
 @media (min-width: 1024px) {
   .mainnav {
@@ -12,6 +20,9 @@
   .mainnav #mobilesearch {
     display: none;
   }
+  .mainnav__icon {
+    display: none;
+  }
   .mainnav ul {
     padding: 0;
     display: flex;
@@ -22,13 +33,13 @@
   }
   .mainnav li a {
     text-decoration: none;
-    color: white;
+    color: #fff;
     text-align: center;
     padding: 14px 16px;
-    font-size: 1.25vw;
+    font-size: 1.75vw;
   }
   .mainnav li:hover {
-    color: black;
+    color: #000;
     background-color: teal;
   }
   .mainnav li:active {
@@ -38,25 +49,24 @@
 @media (min-width: 200px) and (max-width: 767px) {
   .mainnav {
     position: relative;
-    background-color: #333;
     overflow: hidden;
     display: block;
   }
-  .mainnav h1 {
+  .mainnav__sitetitle {
     font-size: 2em;
-    margin: 0;
     padding: 10px;
+    margin: 0;
   }
-  .mainnav .icon {
-    background: teal;
+  .mainnav__icon {
+    background: #00CED1;
     display: block;
     position: absolute;
     right: 10px;
     top: 10px;
+    padding: 10px;
   }
   .mainnav a {
-    padding: 10px;
-    color: white;
+    color: #fff;
     text-decoration: none;
     font-size: 1em;
   }
@@ -72,24 +82,25 @@
 }
 @media (min-width: 768px) and (max-width: 1023px) {
   .mainnav {
-    background-color: #333;
+    display: block;
     overflow: hidden;
   }
-  .mainnav h1 {
+  .mainnav__sitetitle {
     font-size: 2em;
     margin: 0;
     padding: 10px;
+    margin: 0;
   }
-  .mainnav .icon {
-    background: teal;
+  .mainnav__icon {
+    background: #00CED1;
     display: block;
     position: absolute;
     right: 10px;
     top: 10px;
+    padding: 10px;
   }
   .mainnav a {
-    padding: 10px;
-    color: white;
+    color: #fff;
     text-decoration: none;
     font-size: 1em;
   }
@@ -105,23 +116,17 @@
 }
 
 header {
-  background-color: #333;
   margin: 0;
   width: 100vw;
   max-width: 100%;
-}
-header h1 {
-  color: #fff;
-  font-size: 3vw;
-  font-family: "Oswald", sans-serif;
-  margin: 0px 20px 10px 20px;
 }
 @media (min-width: 1024px) {
   header {
     display: flex;
     flex-direction: row;
-    flex-flow: row;
     justify-content: space-between;
+    align-items: none;
+    flex-flow: row;
   }
   header .search {
     align-self: center;
@@ -177,7 +182,6 @@ header h1 {
     padding: 0px 10px;
     align-self: center;
     justify-self: self-start;
-    background: darkgray;
     font-size: 17px;
     border: 3px solid teal;
   }
@@ -223,38 +227,60 @@ footer {
 }
 
 .bookshelf {
-  width: 100vw;
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+  width: 100%;
+  flex-wrap: wrap;
 }
-.bookshelf article {
+.bookshelf__books {
   border: 2px solid darkgrey;
   border-radius: 1em;
   margin: 10px;
-  width: 20vw;
+  width: 65vw;
 }
-.bookshelf article h3 {
-  font-family: "Oswald", sans-serif;
+@media (min-width: 1024px) {
+  .bookshelf__books {
+    width: 20vw;
+    height: 50vh;
+  }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  .bookshelf__books {
+    width: 30vw;
+    height: 50vh;
+  }
+}
+.bookshelf__books__cover {
+  display: block;
+  text-align: center;
+  padding: 10px 0px;
+  height: 30vh;
+  margin: auto;
+}
+@media (min-width: 1024px) {
+  .bookshelf__books__cover {
+    width: auto;
+    height: 30vh;
+  }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  .bookshelf__books__cover {
+    width: 20vw;
+  }
+}
+.bookshelf__books__title {
   text-align: center;
   margin: 0;
-  word-wrap: normal;
+  padding: 0px 10px;
+  overflow-wrap: break-word;
 }
-.bookshelf article p {
+.bookshelf__books__author {
   padding: 10px;
   text-align: center;
   word-wrap: normal;
   font-style: italic;
-}
-.bookshelf article img {
-  display: block;
-  text-align: center;
-  width: 15vw;
-  padding: 10px;
-  height: auto;
-  margin: auto;
 }
 
 h2 {
@@ -262,27 +288,33 @@ h2 {
 }
 
 .add-book {
+  width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: center;
-  width: 100vw;
-  padding: 20px;
+  align-items: center;
+}
+@media (min-width: 200px) and (max-width: 767px) {
+  .add-book {
+    display: flex;
+    flex-direction: column-reverse;
+  }
 }
 .add-book form {
-  width: 100vw;
-  font-family: "Oswald", sans-serif;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   flex-wrap: wrap;
-  width: 40vw;
+  width: 50vw;
 }
 .add-book form .book-drop {
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
+  align-items: baseline;
   flex-wrap: wrap;
   width: 100%;
-  align-items: baseline;
-  justify-content: space-between;
 }
 .add-book form .book-drop input[type=date], .add-book form .book-drop select {
   padding: 12px 20px;
@@ -304,24 +336,43 @@ h2 {
   border-radius: 1em;
 }
 .add-book form fieldset button[type=reset], .add-book form input[type=text] button[type=reset], .add-book form textarea button[type=reset] {
-  background-color: lightgray;
+  background-color: #333;
 }
 .add-book form fieldset textarea, .add-book form input[type=text] textarea, .add-book form textarea textarea {
   width: 100%;
 }
-.add-book form .checked {
+@media (min-width: 200px) and (max-width: 767px) {
+  .add-book form {
+    width: 90vw;
+  }
+  .add-book form .book-drop {
+    width: 90%;
+  }
+}
+
+.checked {
   color: teal;
 }
-.add-book form .fa-star {
-  font-size: 2em;
+
+@media (min-width: 1024px) {
+  .fa-star {
+    font-size: 2em;
+  }
 }
-.add-book .book-cover {
-  grid-column: 3;
+@media (min-width: 768px) and (max-width: 1023px) {
+  .fa-star {
+    font-size: 1em;
+  }
+}
+
+.book-cover {
   display: flex;
   flex-direction: column;
-  padding: 20px;
+  justify-content: center;
+  align-items: none;
+  padding: 0px 0px 0px 20px;
 }
-.add-book .book-cover label {
+.book-cover label {
   border: 2px solid darkgrey;
   background-color: lightgray;
   box-sizing: border-box;
@@ -329,67 +380,82 @@ h2 {
   border-radius: 1em;
   justify-content: center;
   align-self: center;
-  width: 20vw;
+  width: 30vw;
   height: 400px;
 }
-.add-book .book-cover input {
+.book-cover input {
   border: 1px solid #ccc;
   border-radius: 4px;
 }
 
-#publish {
-  font-style: italic;
+@media (min-width: 200px) and (max-width: 767px) {
+  .book-cover {
+    padding: 20px;
+  }
+  .book-cover label {
+    width: 80vw;
+  }
 }
-
+.detailpage__bookcover {
+  margin: 10px;
+  padding: 20px;
+  text-align: center;
+}
+.detailpage__bookcover--rating {
+  padding: 30px 0px;
+}
+.detailpage__bookcover--rating .fa-star {
+  font-size: 1em;
+}
+.detailpage__bookcover--rating .checked {
+  color: teal;
+}
 @media (min-width: 1024px) {
-  #detailpage {
+  .detailpage {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    align-content: flex-start;
+    align-items: flex-start;
   }
 }
 @media (min-width: 200px) and (max-width: 767px) {
-  #detailpage {
+  .detailpage {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-content: center;
+    align-items: center;
   }
 }
 
-#bookcover {
-  margin: 10px;
-  padding: 20px;
+.details {
+  margin: 20px;
+  word-wrap: break-word;
 }
-#bookcover .checked {
-  color: teal;
-}
-#bookcover .stars {
-  padding: 30px 0px;
-}
-#bookcover .stars .fa-star {
+.details h2 {
   font-size: 1em;
+  text-align: left;
+}
+.details__publish {
+  font-style: italic;
 }
 
-#home {
+.home {
   font-size: 1em;
 }
-#home h1, #home h2 {
-  font-family: "Oswald", sans-serif;
+.home h1, .home h2 {
   text-align: center;
 }
 @media (min-width: 200px) and (max-width: 767px) {
-  #home h1, #home h2 {
+  .home h1, .home h2 {
     font-size: 1.5em;
   }
 }
 @media (min-width: 1024px) {
-  #home h1, #home h2 {
+  .home h1, .home h2 {
     font-size: 2.25em;
   }
 }
-#home section {
+.home .home__main {
   margin: 0 0;
   width: 100vw;
   max-width: 100%;
@@ -398,91 +464,51 @@ h2 {
   justify-content: center;
   align-items: center;
 }
-@media (min-width: 1024px) {
-  #home p {
-    font-family: "Oswald", sans-serif;
-    padding: 20px;
-    margin: 0;
-  }
+.home p {
+  font-family: "Oswald", sans-serif;
+  padding: 20px;
+  margin: 0;
 }
 @media (min-width: 200px) and (max-width: 767px) {
-  #home p {
+  .home p {
     padding: 10px;
-    text-align: center;
     word-wrap: normal;
   }
 }
-#home figure {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-auto-rows: auto;
+.home .home__hero {
+  height: 40vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: url("/assets/images/bookshelf.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
   margin: 0;
   text-align: center;
 }
-#home figure .hero-text {
-  grid-column: 1/3;
-  grid-row: 2/3;
-  padding: 20px;
-  text-align: center;
+@media (min-width: 1024px) {
+  .home .home__hero {
+    height: 50vh;
+  }
 }
-#home figure .hero-text h1 {
+.home .home__hero .home__hero-text {
+  padding: 20px;
+}
+.home .home__hero .home__hero-text--title {
   font-size: 3em;
   margin: 0;
   text-shadow: 4px 3px 5px #000;
-  color: white;
+  color: #fff;
 }
 @media (min-width: 200px) and (max-width: 767px) {
-  #home figure .hero-text h1 {
+  .home .home__hero .home__hero-text--title {
     font-size: 2em;
     word-wrap: normal;
   }
 }
-#home figure .hero-text h1 p {
+.home .home__hero .home__hero-text p {
   padding: 0;
-}
-#home figure img {
-  grid-column: 1/3;
-  grid-row: 1/4;
-  width: 100vw;
-  height: 50vh;
-}
-#home figure article {
-  width: 70vw;
-  border: 2px solid darkgrey;
-  border-radius: 5px;
-  margin: 10px;
-}
-#home figure article p {
-  padding: 10px;
-  text-align: center;
-  word-wrap: normal;
-}
-#home figure article img {
-  display: block;
-  text-align: center;
-  padding: 10px;
-  height: auto;
-  width: 60vw;
-  margin: auto;
-}
-
-article {
-  width: 70vw;
-  border: 2px solid darkgrey;
-  border-radius: 5px;
-  margin: 10px;
-}
-article img {
-  display: block;
-  text-align: center;
-  padding: 10px;
-  height: auto;
-  width: 60vw;
-  margin: auto;
-}
-
-h2 {
-  font-size: 1.5em;
 }
 
 @media (min-width: 1024px) {
@@ -502,11 +528,14 @@ main button {
   font-family: "Oswald", sans-serif;
   align-items: center;
   margin: 0;
-  background-color: teal;
-  border-radius: 1em;
+  background-color: #00CED1;
   color: white;
+  border-radius: 1em;
 }
-@media (min-width: 200px) and (max-width: 767px) {
+main button #delete {
+  width: 2vw;
+}
+@media (min-width: 768px) and (max-width: 1023px) {
   main button {
     width: 30vw;
     height: 2em;
@@ -515,7 +544,7 @@ main button {
 }
 @media (min-width: 1024px) {
   main button {
-    width: 10em;
+    width: 8em;
     height: 2em;
     font-size: 1.25em;
   }

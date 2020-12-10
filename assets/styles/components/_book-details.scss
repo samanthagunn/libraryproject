@@ -1,39 +1,40 @@
 @use '../base/typography' as *;
 @use '../abstracts/mixins' as *;
 
-#publish {
-    font-style: italic;
+
+.detailpage {
+    &__bookcover {
+        margin: 10px;
+        padding: 20px;
+        text-align: center;
+        &--rating {  
+            padding:  30px 0px;
+        .fa-star {
+            font-size: 1em;
+        }
+        .checked {
+            color: teal;
+        }
+        }
 }
-#detailpage {
     @include desktop {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-content: flex-start;
+    @include flexy (row, center, flex-start);
+    
     }
     @include mobile {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-content: center;
+        @include flexy (column, center, center);
     }
-   
 }
- #bookcover {
-    margin: 10px;
-    padding: 20px;
-
-.checked {
-    color: teal;
-  }
-.stars {  
-    padding:  30px 0px;
-  .fa-star {
-      font-size: 1em;
-  }
+.details {
+    margin: 20px;
+    word-wrap: break-word;
+    h2 {
+        font-size: 1em;
+        text-align: left;
+    }
+    &__publish {
+        font-style: italic;
+    }
 }
-
- }
-
 
 

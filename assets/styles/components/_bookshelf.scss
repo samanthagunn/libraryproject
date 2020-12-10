@@ -1,38 +1,54 @@
 @use '../base/typography' as *;
+@use '../abstracts/mixins' as *;
 
 .bookshelf {
-    width: 100vw;
-    display: flex;
-    flex-direction: row;
+    @include flexy (row, center, center);
+    width: 100%;
     flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    article {
+
+    &__books {
+        
         border: 2px solid darkgrey;
         border-radius: $border1em;
         margin: 10px;
+        width: 65vw;
+        @include desktop {
         width: 20vw;
-        
-        h3 {
-            font-family: $oswald-font;
+        height: 50vh;
+        }
+        @include tablet {
+            width: 30vw;
+            height: 50vh;
+        }
+        &__cover{
+            display: block;
+            text-align: center;
+            padding: 10px 0px;
+            height: 30vh;
+            margin: auto;
+
+            @include desktop {
+                width: auto;
+                height: 30vh;
+            }
+            @include tablet {
+                width: 20vw;
+            }
+            
+        }
+        &__title {
             text-align: center;
             margin: $no-margin;
-            word-wrap: normal;
+            padding: 0px 10px;
+            overflow-wrap: break-word;
         }
     
-        p {
+        &__author {
             padding: 10px;
             text-align: center;
             word-wrap: normal;
             font-style: italic;
         }
-        img {
-            display: block;
-            text-align: center;
-            width: 15vw;
-            padding: 10px;
-            height: auto;
-            margin: auto;
-        }
+        
     }
 }

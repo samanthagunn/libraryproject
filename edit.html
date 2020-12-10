@@ -5,9 +5,6 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="assets/styles/index.css">
         <script type="text/javascript" src="./assets/styles/components/navbar.js"></script>
-        <link href="https://fonts.googleapis.com/css2?family=Oswald&family=Seaweed+Script&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         
         <title>The Library</title>
     </head>
@@ -15,8 +12,8 @@
         <header>
             
         <div class="mainnav">
-            <h1>The Library</h1>
-            <a href="javascript:void(0);" class="icon" onclick="myFunction()">    
+            <h1 class="mainnav__sitetitle">The Library</h1>
+            <a href="javascript:void(0);" class="mainnav__icon" onclick="hamburger()">    
             <i class="fas fa-bars"></i> 
             </a>
     
@@ -37,15 +34,43 @@
     </div>
         </header>    
     <main>
-    <section>
-        <form class="edit-book">
-            <label for="title"> Title </label> <input type= "text" id="title" name="title"><br>
-            <label for="author">Author</label> <input type ="text"><br>
-            <label for="synopsis">Synopsis</label> <input type ="text"><br>
-            <label for="pages">Pages</label> <input type ="text"><br>
-            <input type ="submit">
-        </form>
-    </section>
+        <h2> Edit Book</h2>
+        <section class="add-book">
+        
+            <form >
+                <fieldset>
+                <label for="title"> Title </label> <span><input type= "text" id="title" name="title"></span><br>
+                <label for="author">Author</label><span> <input type ="text"></span><br>
+                <label for="synopsis">Synopsis</label><span> <textarea type ="comment"></textarea></span><br>
+                <div class="book-drop">
+                <label for="published">Published</label> <span><input type ="date"></span>
+                <label for="pages">Pages</label> 
+                <select name="pages">
+                    <option value="under100">Under 100</option>
+                    <option value="100-300">100-300</option>
+                    <option value="over300">Over 300</option>
+                </select>
+            </div><br>
+                <label for="rating">Star Rating</label>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span><br><br>
+                <br>
+                
+                <button type ="submit">Submit</button> <button type="reset">Cancel</button> 
+            </fieldset>
+            </form>
+            <div class="book-cover">
+    
+                <label for="book-cover">Add Image</label><br>
+        
+                <input type="file" id="book-cover" name="book-cover" accept="image/png, image/jpeg">
+                <br><button id="delete">Delete Book</button>    
+            </div>
+    
+        </section>
     </main>
     <footer>
         <p>Awesome Footer Text</p>

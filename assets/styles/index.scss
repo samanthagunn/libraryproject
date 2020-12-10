@@ -1,4 +1,4 @@
-@use 'base/typography' as *;
+@use './base/typography' as *;
 @use 'components/navbar' as *;
 @use 'layout/header' as *;
 @use 'layout/footer' as *;
@@ -8,6 +8,7 @@
 @use 'components/home' as *;
 @use 'components/hamburger-button' as *;
 @use 'abstracts/mixins' as *;
+@use 'base/colors' as *;
 
 
 html, body {
@@ -15,27 +16,32 @@ html, body {
     
 }
 
-
 main {
     font-family:$oswald-font;
     button {
         font-family: $oswald-font;
         align-items: center;
         margin: 0;
-        background-color: $hover-link;
-        border-radius: $border1em;
+        background-color: color(accent);
         color: white;
+        border-radius: $rndborder;
+        #delete {
+            width: 2vw;
+        }
 
-        @include mobile {
+        @include mobile; @include tablet {
         width: 30vw;
         height: 2em;
         font-size: 1rem;
         }
+    
         @include desktop {
-        width: 10em;
+    
+        width: 8em;
         height: 2em;
         font-size: 1.25em;
-    }
+        
+        }
     
     
 }

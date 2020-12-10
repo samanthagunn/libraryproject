@@ -1,16 +1,24 @@
 @use '../base/typography' as *;
 @use '../abstracts/mixins' as *;
+@use '../base/colors' as *;
 
 .mainnav {
     font-family: $oswald-font;
+    background-color: color(primary);
+
+    &__sitetitle {
+        color: #fff;
+        margin: 0px 20px 10px 20px;
+    }
 @include desktop {
-        display: flex;
-        flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
+    @include flexy(row, space-between, center);
+
     width: 100vw;
     
     #mobilesearch{
+        display: none;
+    }
+    &__icon{
         display: none;
     }
     ul {
@@ -25,13 +33,13 @@
 li{
     a{
     text-decoration: none;
-    color: white;
+    color: color(ltfont);
     text-align: center;
     padding: 14px 16px;
-    font-size: 1.25vw;
+    font-size: 1.75vw;
     }
     &:hover {
-        color: black;
+        color: color(dkfont);
         background-color: $hover-link;
     }
     &:active {
@@ -41,27 +49,27 @@ li{
 }
 @include mobile {
         position: relative;
-        background-color: #333;
         overflow: hidden;
         display: block;
     
-    h1 {
+    &__sitetitle {
         font-size: 2em;
+        padding: $padding10x;
         margin: $no-margin;
-        padding: 10px;
+        
     }
     
-        .icon {
-            background: teal;
+        &__icon {
+            background: color(accent);
             display: block;
             position: absolute;
-            right: 10px;
-            top: 10px;
-          }
+            right: $padding10x;
+            top: $padding10x;
+            padding: $padding10x;
+        }
         
     a {
-        padding: 10px;
-        color: white;
+        color: color(ltfont);
         text-decoration: none;
         font-size: 1em;
         
@@ -69,8 +77,8 @@ li{
     }
     ul {
         list-style: none;
-        padding: 0;
-        margin: 0;
+        padding: $no-margin;
+        margin: $no-margin;
         }
     li{
         display: inline block;
@@ -78,31 +86,27 @@ li{
     }
     }
 @include tablet {
-        background-color: #333;
+    //  @include flexy (row, flex-end, center);
+        display: block;
         overflow: hidden;
-        
-    
-    h1 {
+    &__sitetitle {
         font-size: 2em;
         margin: $no-margin;
-        padding: 10px;
+        padding: $padding10x;
+        margin: $no-margin;
     }
-    
-        .icon {
-            background: teal;
-            display: block;
-            position: absolute;
-            right: 10px;
-            top: 10px;
-          }
-        
+    &__icon {
+        background: color(accent);
+        display: block;
+        position: absolute;
+        right: $padding10x;
+        top: $padding10x;
+        padding: $padding10x;
+    }
     a {
-        padding: 10px;
-        color: white;
+        color: color(ltfont);
         text-decoration: none;
         font-size: 1em;
-        
-        
     }
     ul {
         list-style: none;

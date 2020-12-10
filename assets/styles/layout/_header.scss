@@ -3,23 +3,14 @@
 @use '../components/navbar' as *;
 
 header {
-    background-color: #333 ;
     margin: $no-margin;
     width: 100vw;
     max-width: $max-w;
 
-    h1{
-        color: #fff;
-        font-size: 3vw;
-        font-family: $oswald-font;
-        margin: 0px 20px 10px 20px;
-    }
 
     @include desktop {
-        display: flex;
-        flex-direction: row;
+        @include flexy (row, space-between, none);
         flex-flow: row;
-        justify-content: space-between;
         .search {
             align-self: center;
             padding: 20px;
@@ -56,33 +47,33 @@ header {
         display: none;
     }
     #mobilesearch {
-            
-        align-self: center;
-        padding: 20px;
-    input {
-        height: 2em;
-        width: 50vw;
-        text-align: center;
-        justify-self: center;
-        align-self: center;
-        border: none;
-        border-radius: $border1em
-    }
-    button {
-        width: 20vw;
-        height: 2em;
-        border-radius: $border1em;
-        padding: 0px 10px;
-        align-self: center;
-        justify-self: self-start;
-        background: darkgray;
-        font-size: 17px;
-        border: 3px solid teal;
+            align-self: center;
+            padding: 20px;
+        input {
+            height: 2em;
+            width: 50vw;
+            text-align: center;
+            justify-self: center;
+            align-self: center;
+            border: none;
+            border-radius: $border1em
+        }
+        button {
+            width: 20vw;
+            height: 2em;
+            border-radius: $border1em;
+            padding: 0px 10px;
+            align-self: center;
+            justify-self: self-start;
+
+            font-size: 17px;
+            border: 3px solid teal;
     }
 }
     }
 
     @include tablet {
+       36
         .search {
             display: none;
         }

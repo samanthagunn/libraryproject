@@ -1,13 +1,13 @@
 @use '../base/typography' as *;
+@use '../base/colors' as *;
 
 footer {
         font-family: $oswald-font;
         //position:fixed;
-        bottom: 0;
+        bottom: $no-margin;
         width: 100vw;
         max-width: $max-w;
-        background-color: gray;
+        background-color: color(accent2);
         height: 10vh;
         text-align: center;
-        
     }
