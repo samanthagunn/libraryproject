@@ -39,17 +39,21 @@
         
             <form >
                 <fieldset>
-                <label for="title"> Title </label> <span><input type= "text" id="title" name="title"></span><br>
-                <label for="author">Author</label><span> <input type ="text" id="author" name="author"></span><br>
-                <label for="synopsis">Synopsis</label><span> <textarea type ="comment" id="synopsis" name="synopsis"></textarea></span><br>
+                    <label for="title"> Title </label> <span><input type= "text" id="title" name="title"></span><br>
+                    <label for="author">Author</label><span> <input type ="text" id="author" name="author"></span><br>
+                    <label for="synopsis">Synopsis</label><span> <textarea type ="comment" id="synopsis" name="synopsis"></textarea></span><br>
                 <div class="book-drop">
-                <label for="published">Published</label> <span><input type ="date"></span>
-                <label for="pages">Pages</label> 
-                <select name="pages">
+                <div class="book-drop__pubdate">
+                <label  for="published">Published</label> <span><input type ="date" id="pubdate" name="pubdate"></span>
+            </div>
+            <div class="book-drop__pages">
+                <label  for="pages">Pages</label> 
+                <select  name="pages">
                     <option value="under100">Under 100</option>
                     <option value="100-300">100-300</option>
                     <option value="over300">Over 300</option>
                 </select>
+            </div>
             </div><br>
                 <label for="rating">Star Rating</label>
                 <span class="fa fa-star checked"></span>
@@ -59,7 +63,7 @@
                 <span class="fa fa-star"></span><br><br>
                 <br>
                 
-                <button type ="submit">Submit</button> <button type="reset">Cancel</button> 
+                <div class="formbuttons"><button type ="submit">Submit</button> <button type="reset">Cancel</button></div>
             </fieldset>
             </form>
             <div class="book-cover">
