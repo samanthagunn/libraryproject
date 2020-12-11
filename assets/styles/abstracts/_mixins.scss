@@ -26,3 +26,9 @@ $desktop-width: 1024px;
   justify-content: $justify;
   align-items: $align;
 }
+
+@mixin supermobile {
+  @media (min-width: #{$mobile-width}) and (max-width: #{$desktop-width - 1px}) {
+    @content;
+  }
+}

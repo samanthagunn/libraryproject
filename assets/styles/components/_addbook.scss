@@ -5,7 +5,8 @@ h2 {
 }
 .add-book{
         width: 100%; 
-    @include flexy (row, center, center);
+        // height: 75vh;
+    @include flexy (row, space-evenly, center);
     
     
     @include mobile {
@@ -15,21 +16,28 @@ h2 {
     }
 
     form {
-        @include flexy (column, center, center);
-        flex-wrap: wrap;
-        width: 50vw;
+        width: 35vw;
+        
+        label {
+            display: block;
+        }
 
         .book-drop {
+            
             @include flexy (row, space-between, baseline);
-            flex-wrap: wrap;
+            flex-wrap: row wrap;
             width: 100%;
+
+            
+            
         
         input[type="date"], select {
-            padding: 12px 20px;
-            margin: 8px 0;
+            margin: 8px 0px;
+            padding: 12px 10px;
             border: 1px solid #ccc;
             border-radius: $border1em;
             box-sizing: border-box;
+            
         }
         }   
         
@@ -43,6 +51,7 @@ h2 {
             box-sizing: border-box;
         button {
             border-radius: $border1em;
+            width: 48%;
     }
     
         button[type="reset"]{
@@ -56,13 +65,26 @@ h2 {
     }
         }
 
-    @include mobile{   
+        @include tablet {
+            .book-drop {
+                
+            &__pubdate &__pages{
+                justify-content: space-around;
+            }
+        }
+        }
+
+    @include mobile
+     {   
     form {
         width: 90vw;
     
     .book-drop {
         width: 90%;
-    
+        flex-direction: column;
+            align-items: stretch;
+        
+        
     }   
 
 }
@@ -75,7 +97,7 @@ h2 {
     @include desktop {
     font-size: 2em;
     }
-    @include mobile; @include tablet {
+    @include supermobile{
         font-size: 1em;
     }
 }
@@ -107,3 +129,4 @@ h2 {
             width: 80vw;
 }
     }}
+
