@@ -546,7 +546,7 @@ main button {
 main button #delete {
   width: 2vw;
 }
-@media (min-width: 768px) and (max-width: 1023px) {
+@media (min-width: 200px) and (max-width: 1023px) {
   main button {
     width: 30vw;
     height: 2em;
