@@ -531,11 +531,7 @@ html, body {
   flex-direction: column;
 }
 
-main {
-  flex: 1;
-  font-family: "Oswald", sans-serif;
-}
-main button {
+button {
   font-family: "Oswald", sans-serif;
   align-items: center;
   margin: 0;
@@ -543,18 +539,22 @@ main button {
   color: white;
   border-radius: 1em;
 }
-main button #delete {
+button #delete {
   width: 2vw;
 }
+button main {
+  flex: 1;
+  font-family: "Oswald", sans-serif;
+}
 @media (min-width: 200px) and (max-width: 1023px) {
-  main button {
+  button main {
     width: 30vw;
     height: 2em;
     font-size: 1rem;
   }
 }
 @media (min-width: 1024px) {
-  main button {
+  button main {
     width: 8em;
     height: 2em;
     font-size: 1.25em;

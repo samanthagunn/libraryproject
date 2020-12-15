@@ -17,21 +17,21 @@ html, body {
   display: flex;
   flex-direction: column;
 }
-
+button {
+    font-family: $oswald-font;
+    align-items: center;
+    margin: 0;
+    background-color: color(accent);
+    color: white;
+    border-radius: $rndborder;
+    #delete {
+        width: 2vw;
+    }
 
 main {
     flex: 1;
     font-family:$oswald-font;
-    button {
-        font-family: $oswald-font;
-        align-items: center;
-        margin: 0;
-        background-color: color(accent);
-        color: white;
-        border-radius: $rndborder;
-        #delete {
-            width: 2vw;
-        }
+    
 
         @include supermobile {
         width: 30vw;
