@@ -1,6 +1,7 @@
 @use '../base/typography' as *;
 @use '../abstracts/mixins' as *;
 @use '../base/colors' as *;
+@use '../base/buttons' as *;
 
 .mainnav {
     font-family: $oswald-font;
@@ -10,11 +11,23 @@
         color: #fff;
         margin: 0px 20px 10px 20px;
     }
+    &__search {
+        text-align: center;
+        button {
+            font-family: $oswald-font;
+            align-items: center;
+            margin: 5px;
+            padding: 0px 5px;
+            background-color: transparent ;
+            color: white;
+            // border-radius: $rndborder;
+            width: auto;
+            border: none;
+    }
+}
 @include desktop {
     @include flexy(row, space-between, center);
 
-    width: 100vw;
-    
     #mobilesearch{
         display: none;
     }
@@ -36,7 +49,7 @@ li{
     color: color(ltfont);
     text-align: center;
     padding: 14px 16px;
-    font-size: 1.75vw;
+    font-size: 1.25vw;
     }
     &:hover {
         color: color(dkfont);
@@ -45,6 +58,9 @@ li{
     &:active {
         background-color: darkgray;
     }
+}
+&__search {
+    padding: $padding10x;
 }
 }
 @include mobile {

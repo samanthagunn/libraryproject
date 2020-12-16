@@ -4,6 +4,7 @@
 
 .detailpage {
     &__bookcover {
+        height: auto;
         margin: 10px;
         padding: 20px;
         text-align: center;
@@ -34,6 +35,12 @@
     }
     &__publish {
         font-style: italic;
+    }
+    &__editbook {
+        width: 5vw;
+        height: 3vh;
+        font-size: 1em;
+        
     }
 }
 

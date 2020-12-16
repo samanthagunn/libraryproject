@@ -7,9 +7,9 @@ const Search = () => {
     return (
 
 
-<div className="main">
+<div className="mainnav__search">
     <input type="text" placeholder="Search..."></input>
-    <button type="submit"><i class="fa fa-search"></i></button>
+    <button className="mainnav__search--button" type="submit"><i class="fa fa-search"></i></button>
 </div>
 );
 };
