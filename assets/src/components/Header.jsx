@@ -14,8 +14,9 @@ export default function Header(){
         <h1 className="mainnav__sitetitle">The Library</h1>
 
       <NavBar />
-
+      <div className="mainnav__hiddensearch">
       <Search />
+      </div>
        </div>
     );
 };

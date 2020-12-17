@@ -13,24 +13,28 @@
     }
     &__search {
         text-align: center;
-        button {
+        &--box {
+            border-radius: $rndborder;
+            border: none;
+            height: 1.5em;
+        }
+        &--button {
             font-family: $oswald-font;
             align-items: center;
-            margin: 5px;
-            padding: 0px 5px;
-            background-color: transparent ;
+            margin: 0px 5px;
+            padding: 0px 5px 3px;
+            height: 1.75em;
+            width: 2em;
+            background-color: color(accent);
             color: white;
-            // border-radius: $rndborder;
-            width: auto;
+            border-radius: $rndborder;
             border: none;
     }
 }
 @include desktop {
     @include flexy(row, space-between, center);
 
-    #mobilesearch{
-        display: none;
-    }
+   
     &__icon{
         display: none;
     }
@@ -49,7 +53,7 @@ li{
     color: color(ltfont);
     text-align: center;
     padding: 14px 16px;
-    font-size: 1.25vw;
+    font-size: 1.15em;
     }
     &:hover {
         color: color(dkfont);
@@ -63,11 +67,13 @@ li{
     padding: $padding10x;
 }
 }
-@include mobile {
+@include supermobile {
         position: relative;
         overflow: hidden;
         display: block;
-
+    &__hiddensearch {
+        display: none;
+    }
     
     &__sitetitle {
         font-size: 2em;
@@ -85,56 +91,31 @@ li{
             padding: $padding10x;
         }
         
-    a {
+    i {
         color: color(ltfont);
         text-decoration: none;
         font-size: 1em;
         
         
     }
+    &__mobileburger {
     ul {
         list-style: none;
         padding: $no-margin;
         margin: $no-margin;
         }
     li{
-        display: inline block;
-        text-align: center;
-    }
-    }
-@include tablet {
-    //  @include flexy (row, flex-end, center);
-        display: block;
-        overflow: hidden;
-    &__sitetitle {
-        font-size: 2em;
-        margin: $no-margin;
-        padding: $padding10x;
-        margin: $no-margin;
-    }
-    &__icon {
-        background: color(accent);
-        display: block;
-        position: absolute;
-        right: $padding10x;
-        top: $padding10x;
-        padding: $padding10x;
-    }
-    a {
-        color: color(ltfont);
-        text-decoration: none;
-        font-size: 1em;
-    }
-    ul {
-        list-style: none;
-        padding: 0;
-        margin: 0;
+        a{
+            text-decoration: none;
+            color: color(ltfont);
+            text-align: center;
         }
-    li{
         display: inline block;
         text-align: center;
     }
+}
     }
+
 }
 
     

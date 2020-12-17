@@ -10,16 +10,16 @@ const AddBook = () => {
 <section className="add-book">
         <form >
             <fieldset>
-                <label for="title"> Title </label> <span><input type= "text" id="title" name="title"/></span> <br />
-                <label for="author">Author</label><span> <input type ="text" id="author" name="author" /></span><br />
-                <label for="synopsis">Synopsis</label><span> <textarea type ="comment" id="synopsis" name="synopsis"></textarea></span>
+                <label htmlFor="title"> Title </label> <span><input type= "text" id="title" name="title"/></span> <br />
+                <label htmlFor="author">Author</label><span> <input type ="text" id="author" name="author" /></span><br />
+                <label htmlFor="synopsis">Synopsis</label><span> <textarea type ="comment" id="synopsis" name="synopsis"></textarea></span>
             <div className="book-drop">
             <div className="book-drop__pubdate">
-            <label  for="published">Published</label> <span><input type ="date" id="pubdate" name="pubdate"/ ></span>
+            <label  htmlFor="published">Published</label> <span><input type ="date" id="pubdate" name="pubdate"/ ></span>
         </div>
 
         <div className="book-drop__pages">
-            <label  for="pages">Pages</label> 
+            <label  htmlFor="pages">Pages</label> 
             <select  name="pages">
                 <option value="under100">Under 100</option>
                 <option value="100-300">100-300</option>
@@ -44,7 +44,7 @@ const AddBook = () => {
         
         <div className="book-cover">
 
-            <label for="book-cover">Add Image</label>
+            <label htmlFor="book-cover">Add Image</label>
     
             <input type="file" id="book-cover" name="book-cover" accept="image/png, image/jpeg"/>
             </div>

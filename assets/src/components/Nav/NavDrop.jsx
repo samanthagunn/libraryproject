@@ -5,13 +5,15 @@ import Search from '../Search';
 const NavDrop = (props) => {
    
     return (
-        <nav className='mobileburger' >
+        <nav className='mainnav__mobileburger'>
         <ul >
         <li><NavLink to="/">Home</NavLink></li>
         <li><NavLink to ="/Bookshelf">Bookshelf</NavLink></li>
         <li><NavLink to="/AddBook">Add Book</NavLink> </li>
         </ ul>
+        <br />
         <Search />
+        <br />
     </ nav>
     )
 }
