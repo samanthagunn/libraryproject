@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import Navbar from './components/NavBar';
+import Navbar from './components/Nav/NavBar';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Landing from './pages/Landing';
@@ -30,4 +30,4 @@ const App = () => {
     )
   
 }
-export default App
+export default App;
