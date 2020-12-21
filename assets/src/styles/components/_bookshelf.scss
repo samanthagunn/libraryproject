@@ -14,7 +14,7 @@
         width: 65vw;
         @include desktop {
         width: 20vw;
-        height: 50vh;
+        height: 40vh;
         }
         @include tablet {
             width: 30vw;
@@ -28,12 +28,10 @@
             margin: auto;
 
             @include desktop {
-                width: auto;
-                height: 30vh;
+                width: 13vw;
+                height: 25vh;
             }
-            @include tablet {
-                width: 20vw;
-            }
+            
             
         }
         &__title {

@@ -9,18 +9,19 @@ const Landing = () => {
         <div className="home__hero">
         
         <div className="home__hero-text">
-            <h1 className="home__hero-text--title"> Welcome to the Library</h1>
-        <p>Creative Book Text</p>
+            <h1 className="home__hero-text--title"> Welcome to the Library of Magic</h1>
+        <p>Your letter to Hogwarts is probably lost in the mail. Never fret, begin your studies here.</p>
     </div>
     </div>  
 
         <section className="home__main">
             <h2 >About the Library</h2>
             <p>
-                Fluke hogshead loot handsomely landlubber or just lubber Sail ho belay carouser spyglass rigging. Fire ship deadlights Cat o'nine tails lugger sutler bowsprit hang the jib draft jib nipperkin. Loaded to the gunwalls spanker list pirate hang the jib strike colors yard parrel Jolly Roger holystone.
+                Founded by the fine founders of Magical Books we are pleased to offer a complete collection for young aspiring witches and wizards. No need to break into Gringotts or start counting your Galleons, Sickles, or Knuts due to a very genrous benefactor we are able to offer our collection at no charge.
             </p>
+            <p>Peruse our collection at your leisure and enjoy the exceptionally curated content spanning acrossing the wizarding world.</p>
         <button className="home__seebooks" onClick={() => history.push('./Bookshelf')}>See Books</button>
-        <p>Arr tender Blimey list spirits hail-shot hardtack pinnace chase poop deck. Mutiny code of conduct booty weigh anchor jolly boat hearties lad Jack Ketch ballast bilge water. Poop deck belaying pin rigging wench bring a spring upon her cable tack lanyard pirate measured fer yer chains chantey.</p>
+        <p>Did you find that missing piece of magical literature? Add to the magical collection with just a swish and flick of the hand. </p>
         <button className="home__addbooks" onClick={() => history.push('./AddBook')}>Add a Book</button>
         </section>
 <br />
