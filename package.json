@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/TechtonicAcademy/library-phase-one-assignment-2020-sgunnTechtonic#readme",
   "dependencies": {
+    "axios": "^0.21.0",
     "hamburger-react": "^2.4.0",
     "hamburgers": "^1.1.3",
     "react": "^17.0.1",
