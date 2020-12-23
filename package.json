@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "parcel index.html --open"
+    "start": "json-server ./books.json --port 3000 & parcel index.html --open --port 1234"
   },
   "repository": {
     "type": "git",

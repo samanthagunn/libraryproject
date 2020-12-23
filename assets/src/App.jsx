@@ -1,6 +1,5 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import Navbar from './components/Nav/NavBar';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Landing from './pages/Landing';
@@ -20,8 +19,8 @@ const App = () => {
           <Route exact path="/" component={Landing} />
           <Route exact path="/Bookshelf" component={Bookshelf} />
           <Route exact path="/AddBook" component={AddBook} />
-          <Route exact path="/Details" component={Details} />
-          <Route exaact path="/Edit" component={Edit} />
+          <Route exact path="/Details/:id" component={Details} />
+          <Route exact path="/Edit" component={Edit} />
 
         </Switch>
       
