@@ -1,5 +1,5 @@
 import Axios from "axios";
-import React, { useEffect, useState } from "react";
+import React, { Component, useState } from "react";
 import { RatingStar } from "rating-star";
 
 
@@ -13,20 +13,50 @@ const AddBookForm = () => {
     const [rating, setRating] = useState(0);
     const bookApi = `http://localhost:3000/books`;
     const [isSent, setIsSent] = useState(false)
+    const [titleErr, setTitleErr] = useState({});
+    const [authorErr, setAuthorErr] = useState({});
 
 
 
-    const submit = ( e) => {
+    const submit = (e) => {
         e.preventDefault()
-        Axios.post((bookApi), {title, author, synopsis, pubdate, pages, rating})
-        .then(res=>{
-            console.log(res);
-            console.log(res.data);
-        }); e.target.reset();
-            // .then(() => setIsSent(true))
-            // .catch(() => alert("Unable to add book, please try again"))
+        if (isValid) {
+            Axios.post((bookApi), { title, author, synopsis, pubdate, pages, rating })
+            setTitle('')
+            setAuthor('')
+            setSynopsis('')
+            e.target.reset();
+        }
+        if (!isValid) {
+            alert("Unable to add book, please try again")
+        }
+        // .then(res=>{
+        //     console.log(res);
+        //     console.log(res.data);
+        // }) 
+        // .then(() => setIsSent(true))
+        // .catch(() => alert("Unable to add book, please try again"))
+        const isValid = formValidation();
 
     };
+    const formValidation = () => {
+        const titleErr = {};
+        const authorErr = {};
+        let isValid = true;
+
+        if (title.trim().length < 3) {
+            titleErr.titleShort = "This title is too short";
+            isValid = false;
+        }
+        if (author.trim().length < 3) {
+            authorErr.authorShort = "Author name is too short";
+            isValid = false;
+        }
+        setTitleErr(titleErr);
+        setAuthorErr(authorErr);
+        return isValid;
+    };
+
     const reset = () => {
         setTitle('');
         setRating(0);
@@ -36,7 +66,7 @@ const AddBookForm = () => {
     };
     const onRatingChange = val => {
         setRating(val);
-      };
+    };
 
 
     return (
@@ -46,18 +76,24 @@ const AddBookForm = () => {
             <section className="add-book">
                 <form onSubmit={submit}>
                     <fieldset>
-                        <label htmlFor="title"> Title </label> <span><input
+                        <label htmlFor="title"> Title {Object.keys(titleErr).map((key) => {
+                            return <div style={{ color: "red" }}>{titleErr[key]}</div>
+                        })} </label> <span><input
                             type="text"
                             id="title"
                             name="title"
                             value={title}
                             onChange={e => setTitle(e.target.value)} /></span> <br />
-                        <label htmlFor="author">Author</label><span> <input
+
+                        <label htmlFor="author">Author {Object.keys(authorErr).map((key) => {
+                            return <div style={{ color: "red" }}>{authorErr[key]}</div>
+                        })}</label><span> <input
                             type="text"
                             id="author"
                             name="author"
                             value={author}
                             onChange={e => setAuthor(e.target.value)} /></span><br />
+
                         <label htmlFor="synopsis">Synopsis</label><span> <textarea
                             type="comment"
                             id="synopsis"
@@ -106,10 +142,10 @@ const AddBookForm = () => {
                         <br />
                         <br />
 
-                        <div className="formbuttons"><button type="submit">Submit</button> 
-                        <button type="reset"
-                        onClick={() => reset()}
-                        value="Cancel">Cancel</button></div>
+                        <div className="formbuttons"><button type="submit">Submit</button>
+                            <button type="reset"
+                                onClick={() => reset()}
+                                value="Cancel">Cancel</button></div>
                     </fieldset>
                 </form>
 
