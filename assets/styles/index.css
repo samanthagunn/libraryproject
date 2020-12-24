@@ -218,6 +218,7 @@ header {
 
 footer {
   font-family: "Oswald", sans-serif;
+  position: fixed, bottom;
   bottom: 0;
   width: 100vw;
   max-width: 100%;
@@ -291,7 +292,7 @@ h2 {
   width: 100%;
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
 }
 @media (min-width: 200px) and (max-width: 767px) {
@@ -301,24 +302,22 @@ h2 {
   }
 }
 .add-book form {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  width: 50vw;
+  width: 35vw;
+}
+.add-book form label {
+  display: block;
 }
 .add-book form .book-drop {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: baseline;
-  flex-wrap: wrap;
+  flex-wrap: row wrap;
   width: 100%;
 }
 .add-book form .book-drop input[type=date], .add-book form .book-drop select {
-  padding: 12px 20px;
-  margin: 8px 0;
+  margin: 8px 0px;
+  padding: 12px 10px;
   border: 1px solid #ccc;
   border-radius: 1em;
   box-sizing: border-box;
@@ -334,6 +333,7 @@ h2 {
 }
 .add-book form fieldset button, .add-book form input[type=text] button, .add-book form textarea button {
   border-radius: 1em;
+  width: 48%;
 }
 .add-book form fieldset button[type=reset], .add-book form input[type=text] button[type=reset], .add-book form textarea button[type=reset] {
   background-color: #333;
@@ -341,12 +341,19 @@ h2 {
 .add-book form fieldset textarea, .add-book form input[type=text] textarea, .add-book form textarea textarea {
   width: 100%;
 }
+@media (min-width: 768px) and (max-width: 1023px) {
+  .add-book .book-drop__pubdate .add-book .book-drop__pages {
+    justify-content: space-around;
+  }
+}
 @media (min-width: 200px) and (max-width: 767px) {
   .add-book form {
     width: 90vw;
   }
   .add-book form .book-drop {
     width: 90%;
+    flex-direction: column;
+    align-items: stretch;
   }
 }
 
@@ -359,7 +366,7 @@ h2 {
     font-size: 2em;
   }
 }
-@media (min-width: 768px) and (max-width: 1023px) {
+@media (min-width: 200px) and (max-width: 1023px) {
   .fa-star {
     font-size: 1em;
   }
@@ -519,9 +526,13 @@ h2 {
 
 html, body {
   margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 main {
+  flex: 1;
   font-family: "Oswald", sans-serif;
 }
 main button {
