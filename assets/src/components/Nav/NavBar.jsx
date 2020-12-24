@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Spiral as Hamburger } from 'hamburger-react';
-import { Link, NavLink, useLocation, useHistory } from 'react-router-dom';
+import {  NavLink, useLocation, useHistory } from 'react-router-dom';
 import Burger from './Burger';
 import NavDrop from './NavDrop';
 import Search from '../Search';
