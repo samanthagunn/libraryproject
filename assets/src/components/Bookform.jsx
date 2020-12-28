@@ -33,12 +33,7 @@ const AddBookForm = () => {
         if (!isValid) {
             alert("Unable to add book, please try again")
         }
-        // .then(res=>{
-        //     console.log(res);
-        //     console.log(res.data);
-        // }) 
-        // .then(() => setIsSent(true))
-        // .catch(() => alert("Unable to add book, please try again"))
+        
         
 
     };
