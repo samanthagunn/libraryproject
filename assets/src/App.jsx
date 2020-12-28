@@ -7,6 +7,7 @@ import Bookshelf from './pages/Bookshelf';
 import AddBook from './pages/AddBook';
 import Details from './pages/Details';
 import Edit from './pages/Edit';
+import SearchPage from './components/SearchResults';
 
 
 
@@ -21,6 +22,7 @@ const App = () => {
           <Route exact path="/AddBook" component={AddBook} />
           <Route exact path="/Details/:id" component={Details} />
           <Route exact path="/Edit" component={Edit} />
+          <Route exact path="/SearchPage" component={SearchPage} />
 
         </Switch>
       

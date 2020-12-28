@@ -1,33 +1,42 @@
-import React from 'react';
-import { useHistory} from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import BookDetail from '../components/BookDetail';
+import regeneratorRuntime from "regenerator-runtime";
+// import getBook from '../utils/api';
+import axios from 'axios';
 
-const Details = () => {
-    const history = useHistory();
-    return (
-        <main className="detailpage">
-        <section className="detailpage__bookcover">
-            <img height="400px" src={require ('/assets/images/wickedcover.jpg')} />
-            <div className="bookcover__rating">
-            <label htmlFor="rating">Star Rating</label>
-            <span className="fa fa-star checked"></span>
-            <span className="fa fa-star checked"></span>
-            <span className="fa fa-star checked"></span>
-            <span className="fa fa-star"></span>
-            <span className="fa fa-star"></span><br /><br />
-            </div>
-        </section>
-        <section className="detailpage__details">
-    <h1>Harry Potter and the Sorcerer's Stone</h1>
-    <h2> J.K. Rowling</h2>
-    <p className="details__publish"> Publish Date</p>
-    <p> Pages </p>
-    <p>Synopsis</p>
-    <button className="details__editbook" onClick={() => history.push('./Edit')}>Edit</button>
-        </section>
+const bookApi = `http://localhost:3000/books`;
+
+
+
+const Details = ({ match }) => {
+    const {
+        params: { id },
+    } = match;
+
+    const [book, setBook] = useState(null);
+    
+
+    useEffect(() => {
+
+         
+          axios.get(`${bookApi}/${id}`)
+          .then(({ data: books }) => setBook(books))
+          .catch((err) => console.log(err));
         
-    </main>
+    }, [id]);
+        
+    console.log(setBook);
 
-        );
-    };
+    return (
+       <main>
+           <div>
+      
+     {book && <BookDetail book={book} />}
+     
+     </div>
+       </main>
+
+    );
+};
 
 export default Details;

@@ -9,3 +9,9 @@ export const getAllBooks =() => {
 export const addBooks =() => {
     return axios.get(bookApi);
 };
+
+export const getBook =() => {
+    return axios.get(`${bookApi}/${id}`);
+};
+
+
