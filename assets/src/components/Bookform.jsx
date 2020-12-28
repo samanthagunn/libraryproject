@@ -20,11 +20,14 @@ const AddBookForm = () => {
 
     const submit = (e) => {
         e.preventDefault()
+        const isValid = formValidation();
         if (isValid) {
             Axios.post((bookApi), { title, author, synopsis, pubdate, pages, rating })
             setTitle('')
             setAuthor('')
             setSynopsis('')
+            setRating(0)
+            setPubdate('')
             e.target.reset();
         }
         if (!isValid) {
@@ -36,7 +39,7 @@ const AddBookForm = () => {
         // }) 
         // .then(() => setIsSent(true))
         // .catch(() => alert("Unable to add book, please try again"))
-        const isValid = formValidation();
+        
 
     };
     const formValidation = () => {
@@ -44,11 +47,11 @@ const AddBookForm = () => {
         const authorErr = {};
         let isValid = true;
 
-        if (title.trim().length < 3) {
+        if(title.trim().length < 3) {
             titleErr.titleShort = "This title is too short";
             isValid = false;
         }
-        if (author.trim().length < 3) {
+        if(author.trim().length < 3) {
             authorErr.authorShort = "Author name is too short";
             isValid = false;
         }
@@ -133,11 +136,7 @@ const AddBookForm = () => {
                             colors={{ rear: "gray", mask: "#04898b" }}
                             onChange={e => setRating(e.target.value)}
                         />
-                        {/* <span className="fa fa-star checked"></span>
-                        <span className="fa fa-star checked"></span>
-                        <span className="fa fa-star checked"></span>
-                        <span className="fa fa-star"></span>
-                        <span className="fa fa-star"></span> */}
+                      
                         <br />
                         <br />
                         <br />

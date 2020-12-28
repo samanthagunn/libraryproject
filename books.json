@@ -36,112 +36,22 @@
       "pages": 304
     },
     {
+      "title": "A Lion Among Men",
+      "author": "Gregory Maguire",
+      "synopsis": "A lion find his roar!",
+      "pubdate": "2020-12-02",
+      "pages": "over300",
+      "rating": 2,
       "id": 6
     },
     {
+      "title": "Confessions of an Ugly Stepsister",
+      "author": "Gregory Maguire",
+      "synopsis": "Never underestimate the ugly sister.",
+      "pubdate": "2013-02-27",
+      "pages": "over300",
+      "rating": 3,
       "id": 7
-    },
-    {
-      "id": 8
-    },
-    {
-      "id": 9
-    },
-    {
-      "id": 10
-    },
-    {
-      "id": 11
-    },
-    {
-      "id": 12
-    },
-    {
-      "id": 13
-    },
-    {
-      "id": 14
-    },
-    {
-      "id": 15
-    },
-    {
-      "id": 16
-    },
-    {
-      "id": 17
-    },
-    {
-      "id": 18
-    },
-    {
-      "id": 19
-    },
-    {
-      "id": 20
-    },
-    {
-      "title": "test title",
-      "author": "great author",
-      "synopsis": "afhtyethhgnfbsdc",
-      "pubdate": "2020-12-05",
-      "pages": "100-300",
-      "rating": 4,
-      "id": 21
-    },
-    {
-      "title": "A Lion Among Men",
-      "author": "Gregory Maguire",
-      "synopsis": "Not so cowardly anymore",
-      "pubdate": "2005-02-05",
-      "pages": "over300",
-      "rating": 3,
-      "id": 22
-    },
-    {
-      "title": "A Lion Among Men",
-      "author": "Gregory Maguire",
-      "synopsis": "Not so cowardly anymore",
-      "pubdate": "2005-02-05",
-      "pages": "over300",
-      "rating": 3,
-      "id": 23
-    },
-    {
-      "title": "A Lion Among Men",
-      "author": "Gregory Maguire",
-      "synopsis": "Not so cowardly anymore",
-      "pubdate": "2005-02-05",
-      "pages": "100-300",
-      "rating": 3,
-      "id": 24
-    },
-    {
-      "title": "test title",
-      "author": "great author",
-      "synopsis": "sadfdfhghaersfawsf",
-      "pubdate": "2020-12-03",
-      "pages": "over300",
-      "rating": 2,
-      "id": 25
-    },
-    {
-      "title": "s",
-      "author": "",
-      "synopsis": "",
-      "pubdate": "",
-      "pages": "",
-      "rating": 0,
-      "id": 26
-    },
-    {
-      "title": "s",
-      "author": "",
-      "synopsis": "",
-      "pubdate": "",
-      "pages": "",
-      "rating": 0,
-      "id": 27
     }
   ]
 }
