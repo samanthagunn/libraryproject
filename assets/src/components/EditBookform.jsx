@@ -1,69 +1,38 @@
 import Axios from "axios";
-import React, { Component, useState } from "react";
+import React, { Component, useEffect, useState } from "react";
 import { RatingStar } from "rating-star";
 
-
-
-const AddBookForm = () => {
-    const [title, setTitle] = useState('')
-    const [author, setAuthor] = useState('')
-    const [synopsis, setSynopsis] = useState('')
-    const [pubdate, setPubdate] = useState('')
-    const [pages, setPages] = useState('')
-    const [rating, setRating] = useState(0);
-    const bookApi = `http://localhost:3000/books`;
-    const [titleErr, setTitleErr] = useState({});
-    const [authorErr, setAuthorErr] = useState({});
+const bookApi = `http://localhost:3000/books`;
 
 
 
+const EditBookForm = ({ book: { id, title, author, synopsis, pubdate, pages, rating } }) => {
+
+    
+    
     const submit = (e) => {
         e.preventDefault()
-        const isValid = formValidation();
-        if (isValid) {
-            Axios.post((bookApi), { title, author, synopsis, pubdate, pages, rating })
-            setTitle('')
-            setAuthor('')
-            setSynopsis('')
-            setRating(0)
-            setPubdate('')
-            e.target.reset();
-        }
-        if (!isValid) {
-            alert("Unable to add book, please try again")
-        }
-
+        Axios.put((`${bookApi}/${id}`), { title, author, synopsis, pubdate, pages, rating })
+        setTitle('')
+        setAuthor('')
+        setSynopsis('')
+        setRating(0)
+        setPubdate('')
+            .then(res => console.log(res.data));
+        e.target.reset();
 
 
     };
-    const formValidation = () => {
-        const titleErr = {};
-        const authorErr = {};
-        let isValid = true;
 
-        if (title.trim().length < 3) {
-            titleErr.titleShort = "This title is too short";
-            isValid = false;
-        }
-        if (author.trim().length < 3) {
-            authorErr.authorShort = "Author name is too short";
-            isValid = false;
-        }
-        setTitleErr(titleErr);
-        setAuthorErr(authorErr);
-        return isValid;
-    };
+    const deleteBook = ((e) => {
+        e.preventDefault()
+        Axios.delete(`${bookApi}/${id}`)
+            .then(res => console.log(res.data));
+    });
 
-    const reset = () => {
-        setTitle('');
-        setRating(0);
-        setSynopsis('');
-        setPubdate('');
-        setAuthor('');
-    };
-    const onRatingChange = val => {
-        setRating(val);
-    };
+    const onRatingChange = score => {
+    setRating(score);
+  };
 
 
     return (
@@ -73,18 +42,14 @@ const AddBookForm = () => {
             <section className="add-book">
                 <form onSubmit={submit}>
                     <fieldset>
-                        <label htmlFor="title"> Title {Object.keys(titleErr).map((key) => {
-                            return <div style={{ color: "red" }}>{titleErr[key]}</div>
-                        })} </label> <span><input
+                        <label htmlFor="title"> Title  </label> <span><input
                             type="text"
                             id="title"
                             name="title"
                             value={title}
                             onChange={e => setTitle(e.target.value)} /></span> <br />
 
-                        <label htmlFor="author">Author {Object.keys(authorErr).map((key) => {
-                            return <div style={{ color: "red" }}>{authorErr[key]}</div>
-                        })}</label><span> <input
+                        <label htmlFor="author">Author </label><span> <input
                             type="text"
                             id="author"
                             name="author"
@@ -147,6 +112,7 @@ const AddBookForm = () => {
                     <label htmlFor="book-cover">Add Image</label>
 
                     <input type="file" id="book-cover" name="book-cover" accept="image/png, image/jpeg" />
+                    <br /> <button id="delete" onClick={(e) => e.target.deleteBook}>Delete Book</button>
                 </div>
             </section>
         </main>
@@ -155,4 +121,4 @@ const AddBookForm = () => {
 
 };
 
-export default AddBookForm;
+export default EditBookForm;

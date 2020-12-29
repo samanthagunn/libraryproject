@@ -20,8 +20,8 @@ const App = () => {
           <Route exact path="/" component={Landing} />
           <Route exact path="/Bookshelf" component={Bookshelf} />
           <Route exact path="/AddBook" component={AddBook} />
-          <Route exact path="/Details/:id" component={Details} />
-          <Route exact path="/Edit" component={Edit} />
+          <Route exact path="/Details/:id-:title" component={Details} />
+          <Route exact path="/Edit/:id" component={Edit} />
           <Route exact path="/SearchPage" component={SearchPage} />
 
         </Switch>

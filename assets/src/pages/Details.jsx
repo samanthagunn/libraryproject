@@ -22,7 +22,7 @@ const Details = ({ match }) => {
 
     }, [id]);
 
-    console.log(setBook);
+    // console.log(setBook);
 
     return (
         <main>

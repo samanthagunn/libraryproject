@@ -1,27 +1,39 @@
 import React, { useState, useEffect } from 'react';
-import Search from './Search';
-import TitleList from './TitleList';
+import Search from './Search/Search';
+
 import { getAllBooks } from '../utils/api';
-import Axios from 'axios';
+import axios from 'axios';
+
+const bookApi = `http://localhost:3000/books`;
+
+
+const getBooks =() => {
+    return axios.get(bookApi);
+};
+
 
 const SearchPage = () => {
-    const [title, setTitleTerm] = useState("");
-    const [titleResults, setTitleResults] = useState([]);
+  const [searchTerm, setSearchTerm] = useState("");
+  const [searchResults, setSearchResults] = useState([]);
+
+  const handleChange = e => setSearchTerm(e.target.value);
+
+  useEffect(() => {
+      getBooks()
+      .then(({ data: books }) => searchResults(books))
+      .catch((err) => console.log(err));
+      const results = searchResults.filter(o => o.keywords.includes(searchTerm));
+    setSearchResults(results);
+  }, [searchTerm]);
+
    
 
 	
   return (
     <>
       <h1>Title List</h1>
-      <Search 
-       input={input} 
-       onChange={updateInput}
-      />
-      <ul>
-          {titleResults.map(item => (
-              <li>{item}</li>
-          ))}
-      </ul>
+      {searchResults &&
+            searchResults.map(item => <li key={item.id}>{item.title}</li>)}
     </>
    );
 }

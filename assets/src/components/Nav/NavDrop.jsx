@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link, NavLink, useLocation, useHistory } from 'react-router-dom';
-import Search from '../Search';
+import Search from '../Search/Search';
 
 const NavDrop = (props) => {
     let history = useHistory()
