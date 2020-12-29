@@ -5,19 +5,18 @@ import { RatingStar } from "rating-star";
 const bookApi = `http://localhost:3000/books`;
 
 
+const EditBookForm = (props) => {
+    const [id] = useState(props.book.id)
+    const [title, setTitle] = useState(props.book.title)
+    const [author, setAuthor] = useState(props.book.author)
+    const [synopsis, setSynopsis] = useState(props.book.rating)
+    const [pubdate, setPubdate] = useState(props.book.pubdate)
+    const [pages, setPages] = useState(props.book.pages)
+    const [rating, setRating] = useState(props.book.rating);
 
-const EditBookForm = ({ book: { id, title, author, synopsis, pubdate, pages, rating } }) => {
-
-    
-    
     const submit = (e) => {
         e.preventDefault()
-        Axios.put((`${bookApi}/${id}`), { title, author, synopsis, pubdate, pages, rating })
-        setTitle('')
-        setAuthor('')
-        setSynopsis('')
-        setRating(0)
-        setPubdate('')
+        Axios.put((`${bookApi}/${id}`), {id, title, author, synopsis, pubdate, pages, rating })
             .then(res => console.log(res.data));
         e.target.reset();
 
@@ -29,10 +28,9 @@ const EditBookForm = ({ book: { id, title, author, synopsis, pubdate, pages, rat
         Axios.delete(`${bookApi}/${id}`)
             .then(res => console.log(res.data));
     });
-
-    const onRatingChange = score => {
-    setRating(score);
-  };
+    const onRatingChange = val => {
+        setRating(val);
+    };
 
 
     return (

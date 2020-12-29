@@ -12,6 +12,7 @@ const AddBookForm = () => {
     const [pages, setPages] = useState('')
     const [rating, setRating] = useState(0);
     const bookApi = `http://localhost:3000/books`;
+
     const [titleErr, setTitleErr] = useState({});
     const [authorErr, setAuthorErr] = useState({});
 
@@ -32,8 +33,8 @@ const AddBookForm = () => {
         if (!isValid) {
             alert("Unable to add book, please try again")
         }
-
-
+        
+        
 
     };
     const formValidation = () => {
@@ -41,11 +42,11 @@ const AddBookForm = () => {
         const authorErr = {};
         let isValid = true;
 
-        if (title.trim().length < 3) {
+        if(title.trim().length < 3) {
             titleErr.titleShort = "This title is too short";
             isValid = false;
         }
-        if (author.trim().length < 3) {
+        if(author.trim().length < 3) {
             authorErr.authorShort = "Author name is too short";
             isValid = false;
         }
@@ -130,7 +131,7 @@ const AddBookForm = () => {
                             colors={{ rear: "gray", mask: "#04898b" }}
                             onChange={e => setRating(e.target.value)}
                         />
-
+                      
                         <br />
                         <br />
                         <br />
