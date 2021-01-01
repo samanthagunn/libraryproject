@@ -9,7 +9,7 @@ const EditBookForm = (props) => {
     const [id] = useState(props.book.id)
     const [title, setTitle] = useState(props.book.title)
     const [author, setAuthor] = useState(props.book.author)
-    const [synopsis, setSynopsis] = useState(props.book.rating)
+    const [synopsis, setSynopsis] = useState(props.book.synopsis)
     const [pubdate, setPubdate] = useState(props.book.pubdate)
     const [pages, setPages] = useState(props.book.pages)
     const [rating, setRating] = useState(props.book.rating);
@@ -23,11 +23,7 @@ const EditBookForm = (props) => {
 
     };
 
-    const deleteBook = ((e) => {
-        e.preventDefault()
-        Axios.delete(`${bookApi}/${id}`)
-            .then(res => console.log(res.data));
-    });
+    
     const onRatingChange = val => {
         setRating(val);
     };
@@ -110,7 +106,7 @@ const EditBookForm = (props) => {
                     <label htmlFor="book-cover">Add Image</label>
 
                     <input type="file" id="book-cover" name="book-cover" accept="image/png, image/jpeg" />
-                    <br /> <button id="delete" onClick={(e) => e.target.deleteBook}>Delete Book</button>
+                    <br /> <button id="delete" onClick={() => props.deleteBook(props.book.id)}>Delete Book</button>
                 </div>
             </section>
         </main>

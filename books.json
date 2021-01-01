@@ -28,20 +28,6 @@
       "rating": 4
     },
     {
-      "id": 4,
-      "title": "Fantastic Beasts",
-      "author": "J.K. Rowling",
-      "pubdate": "November 18, 2016",
-      "pages": 304
-    },
-    {
-      "id": 5,
-      "title": "Fantastic Beasts and Where to Find Them",
-      "author": "J.K. Rowling",
-      "pubdate": "November 18, 2016",
-      "pages": 304
-    },
-    {
       "title": "A Lion Among Men",
       "author": "Gregory Maguire",
       "synopsis": "A lion find his roar!",
@@ -58,6 +44,15 @@
       "pages": "over300",
       "rating": 3,
       "id": 7
+    },
+    {
+      "title": "test title",
+      "author": "asdfsfd",
+      "synopsis": "",
+      "pubdate": "",
+      "pages": "",
+      "rating": 0,
+      "id": 8
     }
   ]
 }

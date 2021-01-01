@@ -8,12 +8,14 @@ import AddBook from './pages/AddBook';
 import Details from './pages/Details';
 import Edit from './pages/Edit';
 import SearchPage from './components/SearchResults';
+import ErrorBoundry from './ErrorBoundary';
 
 
 
 const App = () => {
 
     return (
+      <ErrorBoundry>
       <Router >
       <Header />
       <Switch>
@@ -28,6 +30,7 @@ const App = () => {
       
       <Footer />
       </Router>
+      </ErrorBoundry>
     )
   
 }

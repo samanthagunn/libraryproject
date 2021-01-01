@@ -29,6 +29,8 @@ const AddBookForm = () => {
             setRating(0)
             setPubdate('')
             e.target.reset();
+            alert("Book successfully added!")
+            
         }
         if (!isValid) {
             alert("Unable to add book, please try again")
