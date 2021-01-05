@@ -22,7 +22,7 @@
       "id": 3,
       "title": "Fantastic Beasts and Where to Find Them",
       "author": "J.K. Rowling",
-      "synopsis": "Niffler....he's a bit of a clepto.",
+      "synopsis": "Niffler....he's a bit of a clepto. Book information",
       "pubdate": "2016-08-15",
       "pages": 304,
       "rating": 4
@@ -37,22 +37,31 @@
       "id": 6
     },
     {
+      "id": 7,
       "title": "Confessions of an Ugly Stepsister",
       "author": "Gregory Maguire",
-      "synopsis": "Never underestimate the ugly sister.",
+      "synopsis": "Never underestimate the ugly sister! ",
       "pubdate": "2013-02-27",
       "pages": "over300",
-      "rating": 3,
-      "id": 7
+      "rating": 5
     },
     {
-      "title": "test title",
-      "author": "asdfsfd",
+      "title": "Next Great Book",
+      "author": "Great Author",
+      "synopsis": "Synopsis for the book",
+      "pubdate": "2020-12-30",
+      "pages": "",
+      "rating": 2,
+      "id": 9
+    },
+    {
+      "title": "book title",
+      "author": "unknown",
       "synopsis": "",
       "pubdate": "",
       "pages": "",
-      "rating": 0,
-      "id": 8
+      "rating": 4,
+      "id": 10
     }
   ]
 }

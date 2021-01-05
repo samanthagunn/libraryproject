@@ -13,8 +13,6 @@ const NavDrop = (props) => {
         <li><NavLink to="/AddBook">Add Book</NavLink> </li>
         </ ul>
         <br />
-        <Search />
-        <br />
     </ nav>
     )
 }
