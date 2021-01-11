@@ -52,6 +52,15 @@
       "pages": "over300",
       "rating": 3,
       "id": 7
+    },
+    {
+      "title": "test title",
+      "author": "great author",
+      "synopsis": "",
+      "pubdate": "",
+      "pages": "",
+      "rating": 4,
+      "id": 8
     }
   ]
 }

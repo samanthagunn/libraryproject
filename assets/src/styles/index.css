@@ -531,7 +531,11 @@ html, body {
   flex-direction: column;
 }
 
-button {
+main {
+  flex: 1;
+  font-family: "Oswald", sans-serif;
+}
+main button {
   font-family: "Oswald", sans-serif;
   align-items: center;
   margin: 0;
