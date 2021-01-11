@@ -1,39 +1,45 @@
 @use '../base/typography' as *;
 @use '../abstracts/mixins' as *;
+@use '../base/colors' as *;
 
 .bookshelf {
     @include flexy (row, center, center);
     width: 100%;
     flex-wrap: wrap;
+    a {
+        text-decoration: none;
+        color: color(primary)
+    }
 
     &__books {
         
         border: 2px solid darkgrey;
         border-radius: $border1em;
         margin: 10px;
-        width: 65vw;
-        @include desktop {
-        width: 20vw;
+        width: 225px;
         height: 50vh;
+     
+        
+        @include desktop {
+        width: 225px;
+        height: 300px;
         }
         @include tablet {
-            width: 30vw;
+            width: 225px;
             height: 50vh;
         }
         &__cover{
             display: block;
             text-align: center;
             padding: 10px 0px;
-            height: 30vh;
+            width: 125px;
             margin: auto;
 
             @include desktop {
-                width: auto;
-                height: 30vh;
+                width: 115px;
+                height: 25vh;
             }
-            @include tablet {
-                width: 20vw;
-            }
+            
             
         }
         &__title {
@@ -41,6 +47,7 @@
             margin: $no-margin;
             padding: 0px 10px;
             overflow-wrap: break-word;
+            
         }
     
         &__author {
@@ -48,6 +55,7 @@
             text-align: center;
             word-wrap: normal;
             font-style: italic;
+            margin: $no-margin;
         }
         
     }

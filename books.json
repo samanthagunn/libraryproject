@@ -1,25 +1,66 @@
 {
-"books": [
+  "books": [
     {
-        "id": 1,
-        "title": "Harry Potter and the Sorcerers Stone",
-        "author": "J.K. Rowling",
-        "pubdate": "1997",
-        "pages": 309
+      "id": 1,
+      "title": "Harry Potter and the Sorcerers Stone",
+      "author": "J.K. Rowling",
+      "pubdate": "1997",
+      "pages": 309
     },
     {
-        "id": 2,
-        "title": "Wicked",
-        "author": "Gregory Maguire",
-        "pubdate": "1995",
-        "pages": 406
+      "id": 2,
+      "title": "Wicked",
+      "author": "Gregory Maguire",
+      "pubdate": "1995",
+      "pages": 406
     },
     {
-        "id": 3,
-        "title": "Fantastic Beasts and Where to Find Them",
-        "author": "J.K. Rowling",
-        "pubdate": "November 18, 2016",
-        "pages": 304
+      "id": 3,
+      "title": "Fantastic Beasts and Where to Find Them",
+      "author": "J.K. Rowling",
+      "pubdate": "November 18, 2016",
+      "pages": 304
+    },
+    {
+      "id": 4,
+      "title": "Fantastic Beasts",
+      "author": "J.K. Rowling",
+      "pubdate": "November 18, 2016",
+      "pages": 304
+    },
+    {
+      "id": 5,
+      "title": "Fantastic Beasts and Where to Find Them",
+      "author": "J.K. Rowling",
+      "pubdate": "November 18, 2016",
+      "pages": 304
+    },
+    {
+      "title": "A Lion Among Men",
+      "author": "Gregory Maguire",
+      "synopsis": "A lion find his roar!",
+      "pubdate": "2020-12-02",
+      "pages": "over300",
+      "rating": 2,
+      "id": 6
+    },
+    {
+      "title": "Confessions of an Ugly Stepsister",
+      "author": "Gregory Maguire",
+      "synopsis": "Never underestimate the ugly sister.",
+      "pubdate": "2013-02-27",
+      "pages": "over300",
+      "rating": 3,
+      "id": 7
+    },
+    {
+      "title": "test title",
+      "author": "great author",
+      "synopsis": "",
+      "pubdate": "",
+      "pages": "",
+      "rating": 4,
+      "id": 8
     }
-]
+  ]
 }

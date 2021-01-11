@@ -1,9 +1,10 @@
 $colors: (
     primary: #333,
-    accent: #00CED1,
+    accent: #04898b,
     accent2: gray,
     ltfont: #fff,
     dkfont: #000,
+    active: #32e0c4,
 );
 
 @function color($color-name) {

@@ -543,18 +543,22 @@ main button {
   color: white;
   border-radius: 1em;
 }
-main button #delete {
+button #delete {
   width: 2vw;
 }
-@media (min-width: 768px) and (max-width: 1023px) {
-  main button {
+button main {
+  flex: 1;
+  font-family: "Oswald", sans-serif;
+}
+@media (min-width: 200px) and (max-width: 1023px) {
+  button main {
     width: 30vw;
     height: 2em;
     font-size: 1rem;
   }
 }
 @media (min-width: 1024px) {
-  main button {
+  button main {
     width: 8em;
     height: 2em;
     font-size: 1.25em;

@@ -4,13 +4,14 @@
 
 .detailpage {
     &__bookcover {
+        height: auto;
         margin: 10px;
         padding: 20px;
         text-align: center;
         &--rating {  
             padding:  30px 0px;
         .fa-star {
-            font-size: 1em;
+            font-size: .5em;
         }
         .checked {
             color: teal;
@@ -21,7 +22,7 @@
     @include flexy (row, center, flex-start);
     
     }
-    @include mobile {
+    @include supermobile {
         @include flexy (column, center, center);
     }
 }
@@ -34,6 +35,11 @@
     }
     &__publish {
         font-style: italic;
+    }
+    &__editbook {
+        width: 5vw;
+        font-size: 1em;
+        
     }
 }
 
