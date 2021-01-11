@@ -8,7 +8,7 @@
 @use 'components/home' as *;
 @use 'components/hamburger-button' as *;
 @use 'abstracts/mixins' as *;
-@use 'base/colors' as *;
+@use './base/colors' as *;
 
 
 html, body {
