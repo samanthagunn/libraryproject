@@ -3,7 +3,7 @@ import { RatingStar } from "rating-star";
 import { Link } from 'react-router-dom';
 
 const BookDetail = ({ book: {id, title, rating, author, pages, synopsis, pubdate }}) => {
-
+const dateFlip = pubdate.split('-').reverse().join('/');
 
   return (
     <main className="detailpage">
@@ -25,7 +25,7 @@ const BookDetail = ({ book: {id, title, rating, author, pages, synopsis, pubdate
             <section className="detailpage__details">
                 <h1>{title}</h1>
                 <h2>{author}</h2>
-                <p className="details__publish">Published: {pubdate}</p>
+                <p className="details__publish">Published: {dateFlip}</p>
                 <p>Number of Pages: {pages}</p>
                 <p>Synopsis: {synopsis}</p>
                 <Link to={`/Edit/${id}`}><button className="details__editbook">Edit</button></Link>

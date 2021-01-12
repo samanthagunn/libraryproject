@@ -1,8 +1,7 @@
 import React from 'react';
 import { Link, NavLink, useLocation } from 'react-router-dom';
 import NavBar from './Nav/NavBar';
-import NavDrop from './Nav/NavDrop';
-import Search from './Search';
+import Search from './Search/Search';
 
 
 export default function Header(){

@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import BookDetail from '../components/BookDetail';
-
 import axios from 'axios';
 
 const bookApi = `http://localhost:3000/books`;
@@ -22,7 +21,7 @@ const Details = ({ match }) => {
 
     }, [id]);
 
-    console.log(setBook);
+    // console.log(setBook);
 
     return (
         <main>

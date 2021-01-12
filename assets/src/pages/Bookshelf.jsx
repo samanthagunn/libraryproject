@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Book from '../components/Book';
 import { getAllBooks } from '../utils/api';
-
+import Search from '../components/Search/Search';
 
 const Bookshelf = () => {
 
@@ -12,12 +12,14 @@ const Bookshelf = () => {
             .then(({ data: books }) => setBooks(books))
             .catch((err) => console.log(err));
     }, []);
-    console.log(books);
+    // console.log(books);
     
     return (
 
         <main>
             <h2>Only the Best in Books!</h2>
+            <div className="search__mobile">
+            <Search /></div>
             {books ? (
                 <div className="bookshelf">
                     {books.map((book) => (

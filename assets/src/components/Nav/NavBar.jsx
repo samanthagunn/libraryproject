@@ -1,14 +1,13 @@
 import React, { useState } from 'react';
 import { Spiral as Hamburger } from 'hamburger-react';
-import {  NavLink, useLocation, useHistory } from 'react-router-dom';
+import {  NavLink, useHistory } from 'react-router-dom';
 import Burger from './Burger';
 import NavDrop from './NavDrop';
-import Search from '../Search';
+
 
 
 
 const Navbar = (props) => {
-    const location = useLocation();
     const [open, setOpen] = useState(false);
     let history = useHistory()
     return (

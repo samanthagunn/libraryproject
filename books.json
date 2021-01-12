@@ -4,63 +4,73 @@
       "id": 1,
       "title": "Harry Potter and the Sorcerers Stone",
       "author": "J.K. Rowling",
-      "pubdate": "1997",
-      "pages": 309
+      "synopsis": "The boy who lived",
+      "pubdate": "1997-07-31",
+      "pages": "478",
+      "rating": 5
     },
     {
       "id": 2,
       "title": "Wicked",
       "author": "Gregory Maguire",
-      "pubdate": "1995",
-      "pages": 406
+      "synopsis": "It's Galinda with a GUH!",
+      "pudate": "1999-04-21",
+      "pages": "800",
+      "rating": 3
     },
     {
-      "id": 3,
-      "title": "Fantastic Beasts and Where to Find Them",
-      "author": "J.K. Rowling",
-      "pubdate": "November 18, 2016",
-      "pages": 304
-    },
-    {
-      "id": 4,
-      "title": "Fantastic Beasts",
-      "author": "J.K. Rowling",
-      "pubdate": "November 18, 2016",
-      "pages": 304
-    },
-    {
-      "id": 5,
-      "title": "Fantastic Beasts and Where to Find Them",
-      "author": "J.K. Rowling",
-      "pubdate": "November 18, 2016",
-      "pages": 304
-    },
-    {
+      "id": 6,
       "title": "A Lion Among Men",
       "author": "Gregory Maguire",
       "synopsis": "A lion find his roar!",
       "pubdate": "2020-12-02",
-      "pages": "over300",
-      "rating": 2,
-      "id": 6
+      "pages": "437",
+      "rating": 2
     },
     {
+      "id": 7,
       "title": "Confessions of an Ugly Stepsister",
       "author": "Gregory Maguire",
-      "synopsis": "Never underestimate the ugly sister.",
+      "synopsis": "Never underestimate the ugly sister! ",
       "pubdate": "2013-02-27",
-      "pages": "over300",
-      "rating": 3,
-      "id": 7
+      "pages": "392",
+      "rating": 5
     },
     {
-      "title": "test title",
-      "author": "great author",
+      "id": 9,
+      "title": "Next Great Book",
+      "author": "Great Author",
+      "synopsis": "Synopsis for the book",
+      "pubdate": "2020-12-30",
+      "pages": "45",
+      "rating": 2
+    },
+    {
+      "id": 12,
+      "title": "Ghostly Wedding",
+      "author": "Lily Harper Heart",
+      "synopsis": "None",
+      "pubdate": "2021-01-12",
+      "pages": "285",
+      "rating": 4
+    },
+    {
+      "id": 13,
+      "title": "Harry Potter and the Prisoner of Azkaban",
+      "author": "JK Rowling",
       "synopsis": "",
-      "pubdate": "",
-      "pages": "",
+      "pubdate": "1999-02-12",
+      "pages": "293",
+      "rating": 5
+    },
+    {
+      "title": "Fantastic Beasts and Where to Find Them",
+      "author": "JK Rowling",
+      "synopsis": "Niffler....he's a bit of a clepto.",
+      "pubdate": "2016-10-05",
+      "pages": "304",
       "rating": 4,
-      "id": 8
+      "id": 14
     }
   ]
 }
