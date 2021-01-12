@@ -1,12 +1,13 @@
-import React, { useState} from 'react';
+import React, { useState, useEffect} from 'react';
 import SearchBox from './SearchBox';
 
 
 
 const Search = () => {
-    const { search } = window.location;
-    const query = new URLSearchParams(search).get('s');
+    // const { search } = window.location;
+    const query = new URLSearchParams(window.location.search).get('s');
     const [searchQuery, setSearchQuery] = useState(query || '');
+    
 
     return (
 

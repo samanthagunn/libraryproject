@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 
-
 const Burger = (props) => {
     const [open, setOpen] = useState(false);
 

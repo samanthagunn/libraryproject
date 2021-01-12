@@ -12,7 +12,6 @@ const AddBookForm = () => {
     const [pages, setPages] = useState('')
     const [rating, setRating] = useState(0);
     const bookApi = `http://localhost:3000/books`;
-
     const [titleErr, setTitleErr] = useState({});
     const [authorErr, setAuthorErr] = useState({});
 

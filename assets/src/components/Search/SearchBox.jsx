@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useHistory } from "react-router-dom";
 import axios from 'axios';
+import { getAllBooks } from '/assets/src/utils/api';
 
 
 
@@ -8,29 +9,47 @@ import axios from 'axios';
 
 const SearchBox = ({ searchQuery, setSearchQuery }) => {
 
-
+ 
     const history = useHistory();
     const [books, setBooks] = useState([]);
     const onSubmit = e => {
         history.push(`?s=${searchQuery}`)
         e.preventDefault()
     };
+    
 
     const bookFilter = (books, query) => {
-        if (!query) {
-            return null;
-        }
-        axios.get(`http://localhost:3000/books`)
-            .then(({ data: books }) => { setBooks(books); return books; })
-
+        
+       
+        // if (query.length > 3) {
+        // axios.get(`http://localhost:3000/books`, {
+           
+        // })
+        // .then(({ data: books }) => { setBooks(books); return books; })
+        
+        useEffect(() => {
+            
+            getAllBooks()
+                .then(({ data: books }) => { setBooks(books); return books; })
+                .catch((err) => console.log(err));
+        
+    }, [query]);
+    
+    if (!query) {
+        return null;
+    } 
         return books.filter((book) => {
             const bookTitle = book.title.toLowerCase();
             const bookAuthor = book.author.toLowerCase();
             return bookTitle.includes(query) || bookAuthor.includes(query)
         });
+        
+    
+    
     };
+    
     const filteredBooks = bookFilter(books, searchQuery);
-
+    
 
 
     return (
