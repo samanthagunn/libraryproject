@@ -11,9 +11,9 @@ const AddBookForm = () => {
         'author': '',
         'synopsis': '',
         'pubdate': '',
-        'pages': '',    
-})
-    
+        'pages': '',
+    })
+
     // const [title, setTitle] = useState('')
     // const [author, setAuthor] = useState('')
     // const [synopsis, setSynopsis] = useState('')
@@ -23,7 +23,7 @@ const AddBookForm = () => {
     const [titleErr, setTitleErr] = useState({});
     const [authorErr, setAuthorErr] = useState({});
     const bookApi = `http://localhost:3000/books`;
-    
+
 
 
 
@@ -31,10 +31,10 @@ const AddBookForm = () => {
         e.preventDefault()
         const isValid = formValidation();
         if (isValid) {
-            Axios.post((bookApi), {...bookData, rating});
+            Axios.post((bookApi), { ...bookData, rating });
             setBookData('');
             setRating(0);
-            
+
             e.target.reset();
             alert("Book successfully added!")
 
@@ -87,7 +87,7 @@ const AddBookForm = () => {
                             id="title"
                             name="title"
                             value={bookData.title}
-                            onChange={e => setBookData({...bookData, title: e.target.value})} /></span> <br />
+                            onChange={e => setBookData({ ...bookData, title: e.target.value })} /></span> <br />
 
                         <label htmlFor="author">Author {Object.keys(authorErr).map((key) => {
                             return <div style={{ color: "red" }}>{authorErr[key]}</div>
@@ -96,14 +96,13 @@ const AddBookForm = () => {
                             id="author"
                             name="author"
                             value={bookData.author}
-                            onChange={e => setBookData({...bookData, author: e.target.value})} /></span><br />
+                            onChange={e => setBookData({ ...bookData, author: e.target.value })} /></span><br />
 
                         <label htmlFor="synopsis">Synopsis</label><span> <textarea
-                            type="comment"
                             id="synopsis"
                             name="synopsis"
                             value={bookData.synopsis}
-                            onChange={e => setBookData({...bookData, synopsis: e.target.value})}></textarea></span>
+                            onChange={e => setBookData({ ...bookData, synopsis: e.target.value })}></textarea></span>
                         <div className="book-drop">
                             <div className="book-drop__pubdate">
                                 <label htmlFor="published">Published</label> <span><input
@@ -111,18 +110,19 @@ const AddBookForm = () => {
                                     id="pubdate"
                                     name="pubdate"
                                     value={bookData.pubdate}
-                                    onChange={e => setBookData({...bookData, pubdate: e.target.value})} /></span>
+                                    onChange={e => setBookData({ ...bookData, pubdate: e.target.value })} /></span>
                             </div>
 
                             <div className="book-drop__pages">
                                 <label htmlFor="pages">Pages</label>
-                                <select name="pages"
+                                <input
+                                    type="number"
+                                    min="1"
+                                    name="pages"
                                     value={bookData.pages}
-                                    onChange={e => setBookData({...bookData, pages: e.target.value})} >
-                                    <option value="under100">Under 100</option>
-                                    <option value="100-300">100-300</option>
-                                    <option value="over300">Over 300</option>
-                                </select>
+                                    onChange={e => setBookData({ ...bookData, pages: e.target.value })} />
+
+
                             </div>
 
                         </div><br />

@@ -1,24 +1,36 @@
 import Axios from "axios";
-import React, { Component, useEffect, useState } from "react";
+import React, { useState } from "react";
 import { RatingStar } from "rating-star";
+import { Link, useHistory} from 'react-router-dom';
 
 const bookApi = `http://localhost:3000/books`;
 
 
 const EditBookForm = (props) => {
-    const [id] = useState(props.book.id)
-    const [title, setTitle] = useState(props.book.title)
-    const [author, setAuthor] = useState(props.book.author)
-    const [synopsis, setSynopsis] = useState(props.book.synopsis)
-    const [pubdate, setPubdate] = useState(props.book.pubdate)
-    const [pages, setPages] = useState(props.book.pages)
+    const [editBook, setEditBook] = useState({
+        'id': props.book.id,
+        'title': props.book.title, 
+        'author': props.book.author,
+        'synopsis': props.book.synopsis,
+        'pudate': props.book.pubdate,
+        'pages': props.book.pages,
+           })
+    // const [id] = useState(props.book.id)
+    // const [title, setTitle] = useState(props.book.title)
+    // const [author, setAuthor] = useState(props.book.author)
+    // const [synopsis, setSynopsis] = useState(props.book.synopsis)
+    // const [pubdate, setPubdate] = useState(props.book.pubdate)
+    // const [pages, setPages] = useState(props.book.pages)
     const [rating, setRating] = useState(props.book.rating);
+    const history = useHistory();
 
     const submit = (e) => {
+        history.push(`/bookshelf`);
         e.preventDefault()
-        Axios.put((`${bookApi}/${id}`), {id, title, author, synopsis, pubdate, pages, rating })
+        Axios.put((`${bookApi}/${editBook.id}`), {...editBook, rating})
             .then(res => console.log(res.data));
         e.target.reset();
+        
 
 
     };
@@ -40,41 +52,40 @@ const EditBookForm = (props) => {
                             type="text"
                             id="title"
                             name="title"
-                            value={title}
-                            onChange={e => setTitle(e.target.value)} /></span> <br />
+                            value={editBook.title}
+                            onChange={e => setEditBook({ ...editBook, title: e.target.value })} /></span> <br />
 
                         <label htmlFor="author">Author </label><span> <input
                             type="text"
                             id="author"
                             name="author"
-                            value={author}
-                            onChange={e => setAuthor(e.target.value)} /></span><br />
+                            value={editBook.author}
+                            onChange={e => setEditBook({ ...editBook, author: e.target.value })} /></span><br />
 
                         <label htmlFor="synopsis">Synopsis</label><span> <textarea
-                            type="comment"
                             id="synopsis"
                             name="synopsis"
-                            value={synopsis}
-                            onChange={e => setSynopsis(e.target.value)}></textarea></span>
+                            value={editBook.synopsis}
+                            onChange={e => setEditBook({ ...editBook, synopsis: e.target.value })}></textarea></span>
                         <div className="book-drop">
                             <div className="book-drop__pubdate">
                                 <label htmlFor="published">Published</label> <span><input
                                     type="date"
                                     id="pubdate"
                                     name="pubdate"
-                                    value={pubdate}
-                                    onChange={e => setPubdate(e.target.value)} /></span>
+                                    value={editBook.pubdate}
+                                    onChange={e => setEditBook({ ...editBook, pubdate: e.target.value })} /></span>
                             </div>
 
                             <div className="book-drop__pages">
                                 <label htmlFor="pages">Pages</label>
-                                <select name="pages"
-                                    value={pages}
-                                    onChange={e => setPages(e.target.value)}>
-                                    <option value="under100">Under 100</option>
-                                    <option value="100-300">100-300</option>
-                                    <option value="over300">Over 300</option>
-                                </select>
+                                <input
+                                    type="number" 
+                                    min="1"
+                                    name="pages"
+                                    value={editBook.pages}
+                                    onChange={e => setEditBook({ ...editBook, pages: e.target.value })} />
+                                    
                             </div>
 
                         </div><br />
@@ -95,9 +106,8 @@ const EditBookForm = (props) => {
                         <br />
 
                         <div className="formbuttons"><button type="submit">Submit</button>
-                            <button type="reset"
-                                onClick={() => reset()}
-                                value="Cancel">Cancel</button></div>
+                           <Link to ="/bookshelf"><button type="cancel"
+                               >Cancel</button></Link> </div>
                     </fieldset>
                 </form>
 

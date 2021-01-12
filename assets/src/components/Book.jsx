@@ -17,14 +17,6 @@ const Book = ({book: {id, title, author}}) => {
         </Link>
     )
 
-
-
-
-
-
-
-
-
 };
 
 
