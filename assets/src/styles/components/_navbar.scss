@@ -3,59 +3,6 @@
 @use '../base/colors' as *;
 @use '../base/buttons' as *;
 
-
-
-
-    @include desktop {
-        .search {
-            &__dropdown {
-                display: flex;
-                flex-direction: column;
-                margin-top: 2px;
-                position: absolute;
-                width: 200px;
-                margin-left: -80px;
-               
-            }
-            &__droplist {
-                background-color: color(active);
-                border-radius: 10px;
-                border: none;
-                margin: 2px;
-            }
-            &__mobile{
-                display: none;
-            }
-        
-    }
-}
-@include supermobile {
-    .search {
-        &__dropdown {
-            display: flex;
-            flex-direction: column;
-            margin-top: 2px;
-            position: absolute;
-            width: 200px;
-            margin-left: 250px;
-           button {
-            background-color: color(active);
-            border-radius: 10px;
-            border: none;
-            margin: 2px;
-           }
-           
-        }
-        &__droplist {
-            
-            background-color: color(active);
-            border-radius: 10px;
-            border: none;
-            margin: 2px;
-        }
-    }
-}
-
 .mainnav {
     font-family: $oswald-font;
     background-color: color(primary);
@@ -83,12 +30,15 @@
             border-radius: $rndborder;
             border: none;
     }
-    
-   
 }
 @include desktop {
     @include flexy(row, space-between, center);
-    .mylinks {
+
+   
+    &__icon{
+        display: none;
+    }
+    ul {
         padding: 0;
         display: flex;
         flex-flow: row;
@@ -97,11 +47,6 @@
         overflow: hidden;
 
     }
-   
-    &__icon{
-        display: none;
-    }
-   
 li{
     a{
     text-decoration: none;
@@ -120,9 +65,6 @@ li{
 }
 &__search {
     padding: $padding10x;
-
-    
-    
 }
 }
 @include supermobile {
@@ -156,8 +98,6 @@ li{
         
         
     }
-
-    
     &__mobileburger {
     ul {
         list-style: none;
