@@ -1,56 +1,44 @@
 import React, { useState, useEffect } from 'react';
 import { useHistory } from "react-router-dom";
-import axios from 'axios';
 import { getAllBooks } from '/assets/src/utils/api';
-
-
-
 
 
 const SearchBox = ({ searchQuery, setSearchQuery }) => {
 
- 
+
     const history = useHistory();
     const [books, setBooks] = useState([]);
     const onSubmit = e => {
         history.push(`?s=${searchQuery}`)
         e.preventDefault()
     };
-    
+
 
     const bookFilter = (books, query) => {
-        
-       
-        // if (query.length > 3) {
-        // axios.get(`http://localhost:3000/books`, {
-           
-        // })
-        // .then(({ data: books }) => { setBooks(books); return books; })
+        const littleQuery = query.toLowerCase();
         
         useEffect(() => {
-            
+
             getAllBooks()
                 .then(({ data: books }) => { setBooks(books); return books; })
                 .catch((err) => console.log(err));
-        
-    }, [query]);
+
+        }, [littleQuery]);
     
-    if (!query) {
-        return null;
-    } 
+        if (!littleQuery) {
+            return null;
+        }
         return books.filter((book) => {
             const bookTitle = book.title.toLowerCase();
             const bookAuthor = book.author.toLowerCase();
-            return bookTitle.includes(query) || bookAuthor.includes(query)
+            return bookTitle.includes(littleQuery) || bookAuthor.includes(littleQuery)
         });
-        
-    
-    
-    };
-    
-    const filteredBooks = bookFilter(books, searchQuery);
-    
 
+
+
+    };
+
+    const filteredBooks = bookFilter(books, searchQuery);
 
     return (
         <div >
@@ -69,28 +57,28 @@ const SearchBox = ({ searchQuery, setSearchQuery }) => {
                     type="submit"><i className="fa fa-search"></i></button>
             </form>
             <div>
-            {filteredBooks ? (
-            <ul className="search__dropdown" id="search-results">
-                
-                {filteredBooks.map((book, key) => {
-                    
-                    return (
-                        <div
-                            id="result"
-                            className="search__droplist "
-                            key={key}
-                            onClick={() => { history.push(`/details/${book.id}-${book.title}`) }}
-                        >
-                            <p className="mainnav__search--droplistitem">
-                                {(book.title)},&nbsp;
+                {filteredBooks ? (
+                    <ul className="search__dropdown" id="search-results">
+
+                        {filteredBooks.map((book, key) => {
+
+                            return (
+                                <div
+                                    id="result"
+                                    className="search__droplist "
+                                    key={key}
+                                    onClick={() => { history.push(`/details/${book.id}-${book.title}`) }}
+                                >
+                                    <p className="mainnav__search--droplistitem">
+                                        {(book.title)},&nbsp;
                     {(book.author)}
-                            </p>
-                        </div>
-                    );
-                })} 
-                
-            </ul> ): (null)}
-</div>
+                                    </p>
+                                </div>
+                            );
+                        })}
+
+                    </ul>) : (null)}
+            </div>
         </div>
     );
 };
