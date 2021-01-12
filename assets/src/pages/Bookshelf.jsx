@@ -12,7 +12,7 @@ const Bookshelf = () => {
             .then(({ data: books }) => setBooks(books))
             .catch((err) => console.log(err));
     }, []);
-    console.log(books);
+    // console.log(books);
     
     return (
 

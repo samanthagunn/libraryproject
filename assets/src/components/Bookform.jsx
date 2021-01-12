@@ -4,16 +4,26 @@ import { RatingStar } from "rating-star";
 
 
 
+
 const AddBookForm = () => {
-    const [title, setTitle] = useState('')
-    const [author, setAuthor] = useState('')
-    const [synopsis, setSynopsis] = useState('')
-    const [pubdate, setPubdate] = useState('')
-    const [pages, setPages] = useState('')
+    const [bookData, setBookData] = useState({
+        "title": '',
+        'author': '',
+        'synopsis': '',
+        'pubdate': '',
+        'pages': '',    
+})
+    
+    // const [title, setTitle] = useState('')
+    // const [author, setAuthor] = useState('')
+    // const [synopsis, setSynopsis] = useState('')
+    // const [pubdate, setPubdate] = useState('')
+    // const [pages, setPages] = useState('')
     const [rating, setRating] = useState(0);
-    const bookApi = `http://localhost:3000/books`;
     const [titleErr, setTitleErr] = useState({});
     const [authorErr, setAuthorErr] = useState({});
+    const bookApi = `http://localhost:3000/books`;
+    
 
 
 
@@ -21,21 +31,19 @@ const AddBookForm = () => {
         e.preventDefault()
         const isValid = formValidation();
         if (isValid) {
-            Axios.post((bookApi), { title, author, synopsis, pubdate, pages, rating })
-            setTitle('')
-            setAuthor('')
-            setSynopsis('')
-            setRating(0)
-            setPubdate('')
+            Axios.post((bookApi), {...bookData, rating});
+            setBookData('');
+            setRating(0);
+            
             e.target.reset();
             alert("Book successfully added!")
-            
+
         }
         if (!isValid) {
             alert("Unable to add book, please try again")
         }
-        
-        
+
+
 
     };
     const formValidation = () => {
@@ -43,11 +51,11 @@ const AddBookForm = () => {
         const authorErr = {};
         let isValid = true;
 
-        if(title.trim().length < 3) {
+        if (bookData.title.trim().length < 3) {
             titleErr.titleShort = "This title is too short";
             isValid = false;
         }
-        if(author.trim().length < 3) {
+        if (bookData.author.trim().length < 3) {
             authorErr.authorShort = "Author name is too short";
             isValid = false;
         }
@@ -57,11 +65,8 @@ const AddBookForm = () => {
     };
 
     const reset = () => {
-        setTitle('');
+        setBookData('');
         setRating(0);
-        setSynopsis('');
-        setPubdate('');
-        setAuthor('');
     };
     const onRatingChange = val => {
         setRating(val);
@@ -81,8 +86,8 @@ const AddBookForm = () => {
                             type="text"
                             id="title"
                             name="title"
-                            value={title}
-                            onChange={e => setTitle(e.target.value)} /></span> <br />
+                            value={bookData.title}
+                            onChange={e => setBookData({...bookData, title: e.target.value})} /></span> <br />
 
                         <label htmlFor="author">Author {Object.keys(authorErr).map((key) => {
                             return <div style={{ color: "red" }}>{authorErr[key]}</div>
@@ -90,30 +95,30 @@ const AddBookForm = () => {
                             type="text"
                             id="author"
                             name="author"
-                            value={author}
-                            onChange={e => setAuthor(e.target.value)} /></span><br />
+                            value={bookData.author}
+                            onChange={e => setBookData({...bookData, author: e.target.value})} /></span><br />
 
                         <label htmlFor="synopsis">Synopsis</label><span> <textarea
                             type="comment"
                             id="synopsis"
                             name="synopsis"
-                            value={synopsis}
-                            onChange={e => setSynopsis(e.target.value)}></textarea></span>
+                            value={bookData.synopsis}
+                            onChange={e => setBookData({...bookData, synopsis: e.target.value})}></textarea></span>
                         <div className="book-drop">
                             <div className="book-drop__pubdate">
                                 <label htmlFor="published">Published</label> <span><input
                                     type="date"
                                     id="pubdate"
                                     name="pubdate"
-                                    value={pubdate}
-                                    onChange={e => setPubdate(e.target.value)} /></span>
+                                    value={bookData.pubdate}
+                                    onChange={e => setBookData({...bookData, pubdate: e.target.value})} /></span>
                             </div>
 
                             <div className="book-drop__pages">
                                 <label htmlFor="pages">Pages</label>
                                 <select name="pages"
-                                    value={pages}
-                                    onChange={e => setPages(e.target.value)}>
+                                    value={bookData.pages}
+                                    onChange={e => setBookData({...bookData, pages: e.target.value})} >
                                     <option value="under100">Under 100</option>
                                     <option value="100-300">100-300</option>
                                     <option value="over300">Over 300</option>
@@ -132,7 +137,7 @@ const AddBookForm = () => {
                             colors={{ rear: "gray", mask: "#04898b" }}
                             onChange={e => setRating(e.target.value)}
                         />
-                      
+
                         <br />
                         <br />
                         <br />

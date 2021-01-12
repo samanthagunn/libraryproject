@@ -55,13 +55,21 @@
       "id": 9
     },
     {
-      "title": "book title",
-      "author": "unknown",
+      "title": "Ghostly Wedding",
+      "author": "Lily Harper Heart",
+      "synopsis": "None",
+      "pubdate": "2021-01-12",
+      "pages": "100-300",
+      "id": 12
+    },
+    {
+      "title": "Harry Potter and the Prisoner of Azkaban",
+      "author": "JK Rowling",
       "synopsis": "",
-      "pubdate": "",
-      "pages": "",
-      "rating": 4,
-      "id": 10
+      "pubdate": "1999-02-12",
+      "pages": "over300",
+      "rating": 5,
+      "id": 13
     }
   ]
 }
