@@ -14,18 +14,9 @@
       "title": "Wicked",
       "author": "Gregory Maguire",
       "synopsis": "It's Galinda with a GUH!",
-      "pubdate": "1999-04-21",
+      "pudate": "1999-04-21",
       "pages": "800",
       "rating": 3
-    },
-    {
-      "id": 3,
-      "title": "Fantastic Beasts and Where to Find Them",
-      "author": "J.K. Rowling",
-      "synopsis": "Niffler....he's a bit of a clepto. Book information",
-      "pudate": "2016-08-15",
-      "pages": 304,
-      "rating": 4
     },
     {
       "id": 6,
@@ -71,6 +62,15 @@
       "pubdate": "1999-02-12",
       "pages": "293",
       "rating": 5
+    },
+    {
+      "title": "Fantastic Beasts and Where to Find Them",
+      "author": "JK Rowling",
+      "synopsis": "Niffler....he's a bit of a clepto.",
+      "pubdate": "2016-10-05",
+      "pages": "304",
+      "rating": 4,
+      "id": 14
     }
   ]
 }

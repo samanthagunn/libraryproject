@@ -147,14 +147,15 @@ const AddBookForm = () => {
                                 onClick={() => reset()}
                                 value="Cancel">Cancel</button></div>
                     </fieldset>
+                    <div className="book-cover">
+
+<label htmlFor="book-cover">Add Image</label>
+
+<input type="file" id="book-cover" name="book-cover" accept="image/png, image/jpeg" />
+</div>
                 </form>
 
-                <div className="book-cover">
-
-                    <label htmlFor="book-cover">Add Image</label>
-
-                    <input type="file" id="book-cover" name="book-cover" accept="image/png, image/jpeg" />
-                </div>
+               
             </section>
         </main>
 
