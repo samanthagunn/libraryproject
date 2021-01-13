@@ -37,7 +37,7 @@
     .home__hero{
         height: 40vh;
         @include flexy (column, center, center);
-        background-image: url("/assets/images/bookshelf.jpg");
+        background-image: url("../images/bookshelf.jpg");
         background-size: cover;
         background-repeat: no-repeat;
         margin: 0;
