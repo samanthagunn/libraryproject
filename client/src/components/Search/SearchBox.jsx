@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useHistory } from "react-router-dom";
-import { getAllBooks } from '/assets/src/utils/api';
+import { getAllBooks } from '/src/utils/api';
 
 
 const SearchBox = ({ searchQuery, setSearchQuery }) => {

@@ -9,7 +9,7 @@ const dateFlip = pubdate.split('-').reverse().join('/');
     <main className="detailpage">
             
             <section className="detailpage__bookcover">
-                <img height="400px" src={require('/assets/images/wickedcover.jpg')} />
+                <img height="400px" />
                 <div className="bookcover__rating">
                     <label htmlFor="rating">Star Rating</label>
                     <RatingStar
