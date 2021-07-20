@@ -13,11 +13,11 @@ import ErrorBoundry from './ErrorBoundary';
 
 const App = () => {
 
-    return (
-      <ErrorBoundry>
-      <Router >
-      <Header />
-      <Switch>
+  return (
+    <ErrorBoundry>
+      <Router basename={process.env.PUBLIC_URL}>
+        <Header />
+        <Switch>
           <Route exact path="/" component={Landing} />
           <Route exact path="/Bookshelf" component={Bookshelf} />
           <Route exact path="/AddBook" component={AddBook} />
@@ -25,11 +25,11 @@ const App = () => {
           <Route exact path="/Edit/:id" component={Edit} />
 
         </Switch>
-      
-      <Footer />
+
+        <Footer />
       </Router>
-      </ErrorBoundry>
-    )
-  
+    </ErrorBoundry>
+  )
+
 }
 export default App;

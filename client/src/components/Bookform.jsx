@@ -1,7 +1,7 @@
 import Axios from "axios";
 import React, { Component, useState } from "react";
 import { RatingStar } from "rating-star";
-
+import { allBooksApi } from '../utils/api';
 
 
 
@@ -22,7 +22,7 @@ const AddBookForm = () => {
     const [rating, setRating] = useState(0);
     const [titleErr, setTitleErr] = useState({});
     const [authorErr, setAuthorErr] = useState({});
-    const bookApi = `http://localhost:3000/books`;
+    // const bookApi = `http://localhost:3000/books`;
 
 
 
@@ -31,7 +31,7 @@ const AddBookForm = () => {
         e.preventDefault()
         const isValid = formValidation();
         if (isValid) {
-            Axios.post((bookApi), { ...bookData, rating });
+            Axios.post((allBooksApi), { ...bookData, rating });
             setBookData('');
             setRating(0);
 
@@ -149,13 +149,13 @@ const AddBookForm = () => {
                     </fieldset>
                     <div className="book-cover">
 
-<label htmlFor="book-cover">Add Image</label>
+                        <label htmlFor="book-cover">Add Image</label>
 
-<input type="file" id="book-cover" name="book-cover" accept="image/png, image/jpeg" />
-</div>
+                        <input type="file" id="book-cover" name="book-cover" accept="image/png, image/jpeg" />
+                    </div>
                 </form>
 
-               
+
             </section>
         </main>
 

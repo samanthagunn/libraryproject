@@ -1,20 +1,20 @@
 import Axios from "axios";
 import React, { useState } from "react";
 import { RatingStar } from "rating-star";
-import { Link, useHistory} from 'react-router-dom';
-
-const bookApi = `http://localhost:3000/books`;
+import { Link, useHistory } from 'react-router-dom';
+import { allBooksApi } from '../utils/api';
+// const bookApi = `http://localhost:3000/books`;
 
 
 const EditBookForm = (props) => {
     const [editBook, setEditBook] = useState({
         'id': props.book.id,
-        'title': props.book.title, 
+        'title': props.book.title,
         'author': props.book.author,
         'synopsis': props.book.synopsis,
         'pudate': props.book.pubdate,
         'pages': props.book.pages,
-           })
+    })
     // const [id] = useState(props.book.id)
     // const [title, setTitle] = useState(props.book.title)
     // const [author, setAuthor] = useState(props.book.author)
@@ -27,15 +27,15 @@ const EditBookForm = (props) => {
     const submit = (e) => {
         history.push(`/bookshelf`);
         e.preventDefault()
-        Axios.put((`${bookApi}/${editBook.id}`), {...editBook, rating})
+        Axios.put((`${allBooksApi}/${editBook.id}`), { ...editBook, rating })
             .then(res => console.log(res.data));
         e.target.reset();
-        
+
 
 
     };
 
-    
+
     const onRatingChange = val => {
         setRating(val);
     };
@@ -80,12 +80,12 @@ const EditBookForm = (props) => {
                             <div className="book-drop__pages">
                                 <label htmlFor="pages">Pages</label>
                                 <input
-                                    type="number" 
+                                    type="number"
                                     min="1"
                                     name="pages"
                                     value={editBook.pages}
                                     onChange={e => setEditBook({ ...editBook, pages: e.target.value })} />
-                                    
+
                             </div>
 
                         </div><br />
@@ -106,8 +106,8 @@ const EditBookForm = (props) => {
                         <br />
 
                         <div className="formbuttons"><button type="submit">Submit</button>
-                           <Link to ="/bookshelf"><button type="cancel"
-                               >Cancel</button></Link> </div>
+                            <Link to="/bookshelf"><button type="cancel"
+                            >Cancel</button></Link> </div>
                     </fieldset>
                 </form>
 

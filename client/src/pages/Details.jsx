@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import BookDetail from '../components/BookDetail';
 import axios from 'axios';
 
-const bookApi = `http://localhost:3000/books`;
+const allBooksApi = `https://my-json-server.typicode.com/samanthagunn/libraryproject/books`;
 
 
 
@@ -15,7 +15,7 @@ const Details = ({ match }) => {
 
 
     useEffect(() => {
-        axios.get(`${bookApi}/${id}`)
+        axios.get(`${allBooksApi}/${id}`)
             .then(({ data: books }) => setBook(books))
             .catch((err) => console.log(err));
 
