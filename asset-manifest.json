@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.css": "/samanthagunn/libraryproject/static/css/main.0299f72f.chunk.css",
-    "main.js": "/samanthagunn/libraryproject/static/js/main.11b79af6.chunk.js",
-    "main.js.map": "/samanthagunn/libraryproject/static/js/main.11b79af6.chunk.js.map",
-    "runtime-main.js": "/samanthagunn/libraryproject/static/js/runtime-main.95f9875f.js",
-    "runtime-main.js.map": "/samanthagunn/libraryproject/static/js/runtime-main.95f9875f.js.map",
-    "static/js/2.4e63e4b8.chunk.js": "/samanthagunn/libraryproject/static/js/2.4e63e4b8.chunk.js",
-    "static/js/2.4e63e4b8.chunk.js.map": "/samanthagunn/libraryproject/static/js/2.4e63e4b8.chunk.js.map",
-    "index.html": "/samanthagunn/libraryproject/index.html",
-    "static/css/main.0299f72f.chunk.css.map": "/samanthagunn/libraryproject/static/css/main.0299f72f.chunk.css.map",
-    "static/js/2.4e63e4b8.chunk.js.LICENSE.txt": "/samanthagunn/libraryproject/static/js/2.4e63e4b8.chunk.js.LICENSE.txt",
-    "static/media/index.scss": "/samanthagunn/libraryproject/static/media/bookshelf.e78b46ab.jpg"
+    "main.css": "/libraryproject/static/css/main.e764c924.chunk.css",
+    "main.js": "/libraryproject/static/js/main.11b79af6.chunk.js",
+    "main.js.map": "/libraryproject/static/js/main.11b79af6.chunk.js.map",
+    "runtime-main.js": "/libraryproject/static/js/runtime-main.6a76c86d.js",
+    "runtime-main.js.map": "/libraryproject/static/js/runtime-main.6a76c86d.js.map",
+    "static/js/2.96cb0f63.chunk.js": "/libraryproject/static/js/2.96cb0f63.chunk.js",
+    "static/js/2.96cb0f63.chunk.js.map": "/libraryproject/static/js/2.96cb0f63.chunk.js.map",
+    "index.html": "/libraryproject/index.html",
+    "static/css/main.e764c924.chunk.css.map": "/libraryproject/static/css/main.e764c924.chunk.css.map",
+    "static/js/2.96cb0f63.chunk.js.LICENSE.txt": "/libraryproject/static/js/2.96cb0f63.chunk.js.LICENSE.txt",
+    "static/media/index.scss": "/libraryproject/static/media/bookshelf.e78b46ab.jpg"
   },
   "entrypoints": [
-    "static/js/runtime-main.95f9875f.js",
-    "static/js/2.4e63e4b8.chunk.js",
-    "static/css/main.0299f72f.chunk.css",
+    "static/js/runtime-main.6a76c86d.js",
+    "static/js/2.96cb0f63.chunk.js",
+    "static/css/main.e764c924.chunk.css",
     "static/js/main.11b79af6.chunk.js"
   ]
 }
