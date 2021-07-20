@@ -13,26 +13,26 @@ const Bookshelf = () => {
             .catch((err) => console.log(err));
     }, []);
     // console.log(books);
-    
+
     return (
 
         <main>
             <h2>Only the Best in Books!</h2>
             <div className="search__mobile">
-            <Search /></div>
+                <Search /></div>
             {books ? (
                 <div className="bookshelf">
                     {books.map((book) => (
-                        <Book key={book.id} book={book}/>
+                        <Book key={book.id} book={book} />
                     ))}
-                    </div>
+                </div>
             ) : (
                 <div><h3>No Books Available</h3></div>
             )}
-            
-            
 
-            
+
+
+
         </main>
     );
 };

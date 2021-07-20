@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useHistory } from "react-router-dom";
-import { getAllBooks } from '/src/utils/api';
+import { getAllBooks } from '../../utils/api';
 
 
 const SearchBox = ({ searchQuery, setSearchQuery }) => {
@@ -16,7 +16,7 @@ const SearchBox = ({ searchQuery, setSearchQuery }) => {
 
     const bookFilter = (books, query) => {
         const littleQuery = query.toLowerCase();
-        
+
         useEffect(() => {
 
             getAllBooks()
@@ -24,7 +24,7 @@ const SearchBox = ({ searchQuery, setSearchQuery }) => {
                 .catch((err) => console.log(err));
 
         }, [littleQuery]);
-    
+
         if (!littleQuery) {
             return null;
         }
@@ -71,7 +71,7 @@ const SearchBox = ({ searchQuery, setSearchQuery }) => {
                                 >
                                     <p className="mainnav__search--droplistitem">
                                         {(book.title)},&nbsp;
-                    {(book.author)}
+                                        {(book.author)}
                                     </p>
                                 </div>
                             );
