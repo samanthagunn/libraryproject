@@ -1,21 +1,43 @@
-# Library-Phase-One-Assignment-2020
+![](RackMultipart20210721-4-qviivl_html_4b07c7b46b91852b.png)
 
-## Instructions:
+# Library Project
 
-- Clone this repository into your local `~/code` directory.
+**5th February 2021**
 
-- Initialize npm in your new local repository.
+# OVERVIEW
 
-- Install the `parcel-bundler` npm package.
+The Library Project is meant for students to learn and build upon the skills learned during the classroom experience. Over the course of the project students will begin with a basic HTML/CSS website and ultimately have a dynamic website built on React with SCSS styling and a mock back end server.
 
-- Create your file structure. [See example structure here](https://docs.google.com/document/d/11NtcCcDG2fkXCbgA2YRrK77mt9W42mSo2Tq8AahwtUk/edit).
+# TECH STACK
 
-- Add, commit, and push your initial changes.
+React
+SCSS
+JavaScript
+Mock Server
 
-- Build out your HTML structure and BEM + SCSS styling, based on the [Library Project Wireframes](https://drive.google.com/drive/folders/1z8iGpt6CXeVkP9Ii7sbFsvrQQXSX8mDv).
+# GOALS
 
-- Remember to view your code locally using Parcel; without it your SCSS won’t work!
+1. Become comfortable with executing DRY code within the SCSS and React environments
+2. Have a fully functional CRUD application
 
-- Note: No JavaScript functionality should be completed in Phase I; the focus should be on building out static HTML structure and reusable, best-practices styles using BEM + SCSS.
+# SPECIFICATIONS
 
-- **HINT:** Run `parcel *.html` through your command line. This will allow you to access each of your HTML files from the browser via http://localhost:1234/filenamehere.html.
+There was little direction given for the project outside of the development stack that was given. Overall content and style were at the discretion of each individual student.
+
+# MILESTONES
+
+## Functional Basic HTML website
+
+Created a function bare bones structure for website
+
+## Conversion to React JS
+
+All basic HTML, CSS, and JavaScript were converted to React JS framework with the addition of SCSS styling.
+
+## Adding Logic for Books/Bookshelf
+
+Behind the scenes logic was added for the execution of pulling books from JSON data into the site and allowing the functionality of editing and deleting.
+
+## Search Added
+
+The ability to search the site was added and the extended logic to search as soon as characters are entered into the search field.
